@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-pi-lyart-61.vercel.app/sitemap.xml
