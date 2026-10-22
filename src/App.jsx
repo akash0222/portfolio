@@ -270,19 +270,15 @@ function App() {
           </div>
           <div className="project-grid" data-filter={activeWorkFilter}>
             <article className="project-card project-featured" data-category="web-app">
-              <div className="project-art timetable-art">
-                <div className="art-top"><span className="art-brand">scheduly<span>.</span></span><span className="art-tag">01 / SCHEDULING</span></div>
-                <div className="mini-calendar">
-                  <div className="calendar-side"><b>WEEKLY</b><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span></div>
-                  <div className="calendar-grid">
-                    <div className="cal-cell"><b>09:00</b><span className="slot slot-purple">BBA · ENT</span><span className="slot slot-blue">PGDM</span></div>
-                    <div className="cal-cell"><b>10:00</b><span className="slot slot-green">BBA · COM</span><span className="slot slot-purple">BBA · IM</span></div>
-                    <div className="cal-cell"><b>11:00</b><span className="slot slot-blue">PGDM</span><span className="slot slot-pink">Faculty 04</span></div>
-                    <div className="cal-cell"><b>12:00</b><span className="slot slot-pink">BBA · ENT</span><span className="slot slot-green">BBA · COM</span></div>
-                  </div>
-                </div>
-                <div className="art-caption">A smarter way to plan academic schedules.</div>
-                <span className="project-art-label" aria-hidden="true">UI CONCEPT</span>
+              <div className="project-art project-image-art scheduly-photo-art">
+                <img
+                  src="https://images.ctfassets.net/h83dujey17us/7Jk1lxJlkprlVAzNhm9F9/b40dca2cc193087fd30670e6f3c1694e/News3.png"
+                  alt="Laptop showing a weekly calendar and time-slot scheduling interface"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
+                <a className="project-photo-credit" href="https://www.corpay.com/resources/newsroom/corpay-cross-border-using-blockchain-technology-to-facilitate-client-fx-conversions" target="_blank" rel="noreferrer" aria-label="Image reference from Corpay">Image reference: Corpay</a>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>FULL-STACK WEB APP</span><span>PROJECT 01</span></div>
@@ -294,13 +290,15 @@ function App() {
               </div>
             </article>
             <article className="project-card" data-category="web-app">
-              <div className="project-art results-art">
-                <div className="results-window">
-                  <div className="results-head"><span>RESULTS OVERVIEW</span><span>•••</span></div>
-                  <div className="result-number"><small>Illustrative result card</small><strong>SGPA <em>preview</em></strong><div className="result-bars"><i style={{ height: "45%" }} /><i style={{ height: "68%" }} /><i style={{ height: "55%" }} /><i style={{ height: "82%" }} /><i style={{ height: "72%" }} /><i style={{ height: "96%" }} /><i style={{ height: "77%" }} /><i style={{ height: "88%" }} /></div></div>
-                  <div className="result-row"><span>Workflow status</span><b>Demo state</b></div>
-                </div>
-                <span className="project-art-label" aria-hidden="true">UI CONCEPT</span>
+              <div className="project-art project-image-art results-photo-art">
+                <img
+                  src="https://www.ibo.org/globalassets/new-structure/headers/imgs/ib-insights.jpg"
+                  alt="Laptop showing an education assessment analytics dashboard with grade-comparison charts"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
+                <a className="project-photo-credit" href="https://www.ibo.org/news/news-about-the-ib/introducing-ib-insights-the-ibs-new-interactive-assessment-data-analysis-tool/" target="_blank" rel="noreferrer" aria-label="Image reference from International Baccalaureate">Image reference: IB Insights</a>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>EDTECH / ERP</span><span>PROJECT 02</span></div>
