@@ -1132,3 +1132,10 @@ body{
 @media(max-width:800px){.enquiry-wrap{grid-template-columns:1fr;gap:28px}.enquiry-intro>p:not(.section-kicker){max-width:560px}}
 @media(max-width:680px){.services-section{padding-top:10px}.services-grid{grid-template-columns:minmax(0,1fr)}.service-card{min-height:235px;padding:22px}.enquiry-wrap{margin-top:48px;padding-top:34px}.enquiry-form{padding:17px}.enquiry-fields-two{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.service-card{transition:none}}
+/* Phase 3 quality pass: clear keyboard focus and full reduced-motion support. */
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:2px solid var(--green);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+  .ticker-track{animation:none!important}
+}
