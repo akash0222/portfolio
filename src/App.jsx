@@ -451,7 +451,7 @@ function App() {
             <p>I’m open to career opportunities and freelance collaborations in SaaS implementation, web products, and workflow improvement.</p>
             <div className="contact-actions"><a className="button button-primary" href="mailto:abhsingh76@gmail.com?subject=Let%27s%20connect">Email me <span>↗</span></a><a className="button button-whatsapp" href="https://wa.me/919956191939" target="_blank" rel="noreferrer">WhatsApp me <span>↗</span></a></div>
           </div>
-          {currentPage === "contact" && <div className="container enquiry-wrap" id="project-enquiry">
+          {(currentPage === "contact" || currentPage === "home") && <div className="container enquiry-wrap" id="project-enquiry">
             <div className="enquiry-intro"><p className="section-kicker">FREELANCE PROJECT ENQUIRY</p><h2>Tell me a little<br /><span className="muted-heading">about the work.</span></h2><p>Share the basics so I can understand what you need and prepare for a useful first conversation.</p></div>
             <form className="enquiry-form" onSubmit={handleEnquirySubmit}>
               <div className="enquiry-fields enquiry-fields-two">
