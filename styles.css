@@ -1143,9 +1143,9 @@ body{
 .project-art{isolation:isolate}
 .project-art-label{position:absolute;top:13px;right:13px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 9px;border:1px solid #d8e1ff35;border-radius:999px;background:rgba(8,13,25,.72);backdrop-filter:blur(10px);color:#f1f2ff;font:8px var(--mono);letter-spacing:.09em;line-height:1;box-shadow:0 8px 22px #0002}
 .project-art-label:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--purple)}
-.project-image-art{min-height:270px;position:relative;overflow:hidden;padding:0;background:#121a2b}
+.project-image-art{height:270px;min-height:270px;flex:0 0 270px;position:relative;overflow:hidden;padding:0;background:#121a2b}
 .project-image-art:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(7,11,22,.18),transparent 34%,transparent 55%,rgba(7,11,22,.58))}
-.project-image-art img{display:block;width:100%;height:100%;min-height:270px;object-fit:cover;object-position:center;transform:scale(1.001);transition:transform .55s cubic-bezier(.2,.75,.25,1),filter .45s ease;filter:saturate(.93) contrast(1.02)}
+.project-image-art img{display:block;width:100%;height:100%;min-height:0;max-height:100%;object-fit:cover;object-position:center;transform:scale(1.001);transition:transform .55s cubic-bezier(.2,.75,.25,1),filter .45s ease;filter:saturate(.93) contrast(1.02)}
 .project-image-art:hover img{transform:scale(1.045);filter:saturate(1.08) contrast(1.03)}
 .detailing-photo-art img{object-position:center 56%}
 .eyewear-photo-art img{object-position:center 48%;background:#e9e7e3}
@@ -1155,4 +1155,7 @@ body{
 .project-photo-credit:focus-visible{outline:2px solid var(--green);outline-offset:3px}
 .project-art img{color:transparent}
 @media(hover:none){.project-image-art img{transition:none}}
-@media(max-width:680px){.project-image-art,.project-image-art img{min-height:245px}.project-art-label{top:11px;right:11px}.project-photo-credit{left:11px;bottom:11px}}
+@media(max-width:680px){.project-image-art{height:245px;min-height:245px;flex-basis:245px}.project-image-art img{height:100%;min-height:0;max-height:100%}.project-art-label{top:11px;right:11px}.project-photo-credit{left:11px;bottom:11px}}
+
+/* Fixed project image frame so cards align consistently */
+.project-image-art{contain:paint}
