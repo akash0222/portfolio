@@ -282,6 +282,7 @@ function App() {
                   </div>
                 </div>
                 <div className="art-caption">A smarter way to plan academic schedules.</div>
+                <span className="project-art-label" aria-hidden="true">UI CONCEPT</span>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>FULL-STACK WEB APP</span><span>PROJECT 01</span></div>
@@ -299,6 +300,7 @@ function App() {
                   <div className="result-number"><small>Illustrative result card</small><strong>SGPA <em>preview</em></strong><div className="result-bars"><i style={{ height: "45%" }} /><i style={{ height: "68%" }} /><i style={{ height: "55%" }} /><i style={{ height: "82%" }} /><i style={{ height: "72%" }} /><i style={{ height: "96%" }} /><i style={{ height: "77%" }} /><i style={{ height: "88%" }} /></div></div>
                   <div className="result-row"><span>Workflow status</span><b>Demo state</b></div>
                 </div>
+                <span className="project-art-label" aria-hidden="true">UI CONCEPT</span>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>EDTECH / ERP</span><span>PROJECT 02</span></div>
@@ -310,57 +312,14 @@ function App() {
               </div>
             </article>
             <article className="project-card" data-category="website">
-              <div className="project-art detailing-art">
-                <svg className="detailing-visual" viewBox="0 0 720 440" role="img" aria-label="Illustration of a polished car in a dark green detailing studio" preserveAspectRatio="xMidYMid slice">
-                  <defs>
-                    <linearGradient id="detail-background" x1="0" y1="0" x2="1" y2="1">
-                      <stop stopColor="#102a27" />
-                      <stop offset=".58" stopColor="#183b32" />
-                      <stop offset="1" stopColor="#536349" />
-                    </linearGradient>
-                    <linearGradient id="detail-body" x1="0" y1="0" x2=".15" y2="1">
-                      <stop stopColor="#edf0d7" />
-                      <stop offset=".36" stopColor="#9db9a0" />
-                      <stop offset=".68" stopColor="#526f64" />
-                      <stop offset="1" stopColor="#243a36" />
-                    </linearGradient>
-                    <linearGradient id="detail-glass" x1="0" y1="0" x2="1" y2="1">
-                      <stop stopColor="#a8c9b7" stopOpacity=".82" />
-                      <stop offset=".45" stopColor="#294b46" stopOpacity=".94" />
-                      <stop offset="1" stopColor="#172b2a" />
-                    </linearGradient>
-                    <radialGradient id="detail-glow">
-                      <stop stopColor="#c5dba9" stopOpacity=".34" />
-                      <stop offset="1" stopColor="#c5dba9" stopOpacity="0" />
-                    </radialGradient>
-                    <filter id="detail-shadow" x="-20%" y="-40%" width="140%" height="190%">
-                      <feGaussianBlur stdDeviation="14" />
-                    </filter>
-                  </defs>
-                  <path fill="url(#detail-background)" d="M0 0h720v440H0z" />
-                  <ellipse cx="520" cy="130" rx="250" ry="220" fill="url(#detail-glow)" />
-                  <path d="M0 334h720v106H0z" fill="#101b1c" fillOpacity=".65" />
-                  <path d="M0 360h720M0 383h720M0 406h720" stroke="#d5e1c1" strokeOpacity=".08" />
-                  <path d="M72 84h576M103 105h514" stroke="#e2e8cf" strokeOpacity=".08" />
-                  <path d="M125 324c70-18 117-18 196-15 128 4 245 2 302 24 24 9 42 30 48 46H79c5-26 19-45 46-55Z" fill="#06100f" fillOpacity=".62" filter="url(#detail-shadow)" />
-                  <path d="M91 294c15-28 44-49 86-62l65-19 54-60c15-17 34-27 59-29l111-3c25 0 43 8 62 24l72 62 54 20c29 11 43 29 47 57l3 34c1 13-9 23-22 23h-36a57 57 0 0 0-113 0H289a57 57 0 0 0-113 0h-62c-17 0-29-12-29-28v-6c0-6 2-10 6-13Z" fill="url(#detail-body)" stroke="#dce7ce" strokeOpacity=".68" strokeWidth="3" />
-                  <path d="m261 205 50-54c12-13 27-19 46-20l54-2v77H261Zm169-76 45-1c20 0 34 6 50 20l60 53H430v-72Z" fill="url(#detail-glass)" stroke="#dce7ce" strokeOpacity=".58" strokeWidth="2" />
-                  <path d="M421 133v72M268 210h324M127 278c34-23 83-34 129-38m44 69h218" fill="none" stroke="#f1f1d9" strokeOpacity=".65" strokeWidth="3" />
-                  <path d="M99 284c21-9 48-15 75-18m400-3 62 16" fill="none" stroke="#f6edc7" strokeLinecap="round" strokeWidth="8" />
-                  <path d="M591 278h45" stroke="#fff1c2" strokeLinecap="round" strokeWidth="5" />
-                  <circle cx="232" cy="350" r="52" fill="#111a19" stroke="#d4dec4" strokeWidth="5" />
-                  <circle cx="232" cy="350" r="34" fill="#30423d" stroke="#a5b69e" strokeWidth="3" />
-                  <circle cx="232" cy="350" r="8" fill="#dce5c9" />
-                  <path d="M232 317v66m-33-33h66m-56-23 46 46m0-46-46 46" stroke="#a9b9a2" strokeWidth="3" />
-                  <circle cx="540" cy="350" r="52" fill="#111a19" stroke="#d4dec4" strokeWidth="5" />
-                  <circle cx="540" cy="350" r="34" fill="#30423d" stroke="#a5b69e" strokeWidth="3" />
-                  <circle cx="540" cy="350" r="8" fill="#dce5c9" />
-                  <path d="M540 317v66m-33-33h66m-56-23 46 46m0-46-46 46" stroke="#a9b9a2" strokeWidth="3" />
-                  <path d="M93 327h70m401 0h53" stroke="#eff0d5" strokeOpacity=".56" strokeWidth="2" />
-                  <path d="m594 92 5 15 15 5-15 5-5 15-5-15-15-5 15-5 5-15Zm-75 45 3 9 9 3-9 3-3 9-3-9-9-3 9-3 3-9Z" fill="#e2e9cc" fillOpacity=".76" />
-                  <text x="32" y="42" fill="#edf0da" fontFamily="monospace" fontSize="13" letterSpacing="2">THE DETAILING SHELTER</text>
-                  <text x="32" y="414" fill="#e0e8d1" fillOpacity=".82" fontFamily="monospace" fontSize="11" letterSpacing="2">PRECISION · FINISH · PROTECTION</text>
-                </svg>
+              <div className="project-art project-image-art detailing-photo-art">
+                <img
+                  src="https://images.unsplash.com/photo-1746593934498-b335e4e04845?auto=format&amp;fit=crop&amp;w=1400&amp;q=82"
+                  alt="A glossy black car inside a modern automotive detailing studio"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>AUTOMOTIVE / SERVICE WEBSITE</span><span>PROJECT 03</span></div>
@@ -372,7 +331,15 @@ function App() {
               </div>
             </article>
             <article className="project-card" data-category="website commerce">
-              <div className="project-art store-art"><div className="store-top"><span>MY SPECS / STUDIO</span><span>⌕　♡</span></div><div className="glasses"><div className="lens" /><div className="bridge" /><div className="lens" /></div><div className="store-bottom"><span>Find your frame.</span><span className="round-arrow">↗</span></div></div>
+              <div className="project-art project-image-art eyewear-photo-art">
+                <img
+                  src="https://images.unsplash.com/photo-1769414017326-6ea5d70f7884?auto=format&amp;fit=crop&amp;w=1400&amp;q=82"
+                  alt="Modern eyeglasses photographed as a clean eyewear product image"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
+              </div>
               <div className="project-content">
                 <div className="project-meta"><span>COMMERCE CONCEPT</span><span>PROJECT 04</span></div>
                 <h3>My Specs Store</h3>
@@ -383,7 +350,15 @@ function App() {
               </div>
             </article>
             <article className="project-card project-wide" data-category="website">
-              <div className="project-art vastu-art"><div className="vastu-sun" /><div className="vastu-copy"><span>SPACE · BALANCE · WELLBEING</span><strong>Tatvam<br />Vastu</strong><i>Thoughtful spaces, intentional living.</i></div><div className="vastu-lines" /></div>
+              <div className="project-art project-image-art vastu-photo-art">
+                <img
+                  src="https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&amp;fit=crop&amp;w=1400&amp;q=82"
+                  alt="A warm, minimalist living room with neutral furniture and natural light"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
+              </div>
               <div className="project-content">
                 <div className="project-meta"><span>BRAND WEBSITE</span><span>PROJECT 05</span></div>
                 <h3>Tatvam Vastu</h3>
