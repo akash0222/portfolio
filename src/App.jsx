@@ -298,7 +298,7 @@ function App() {
                   decoding="async"
                 />
                 <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
-                <a className="project-photo-credit" href="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" target="_blank" rel="noreferrer" aria-label="Image reference hosted by Unsplash">Image reference: Unsplash</a>
+                <a className="project-photo-credit" href="https://unsplash.com/@kmuza?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by Carlos Muza on Unsplash">Photo: Carlos Muza / Unsplash</a>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>EDTECH / ERP</span><span>PROJECT 02</span></div>
