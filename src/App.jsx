@@ -153,10 +153,10 @@ function App() {
           <>
         <section className="hero container" id="home">
           <div className="hero-copy">
-            <div className="eyebrow"><span className="status-dot" /> OPEN TO CAREER ROLES &amp; FREELANCE PROJECTS</div>
+            <div className="eyebrow"><span className="status-dot" /> OPEN TO CAREER OPPORTUNITIES &amp; FREELANCE WORK</div>
             <h1>Good ideas.<br />Useful systems.<br /><span className="gradient-text">Real-world impact.</span></h1>
             <p className="hero-sub">SAAS IMPLEMENTATION · PRODUCT BUILDING · WEB EXPERIENCES</p>
-            <p className="hero-desc">I bridge business needs and technology—from implementing SaaS workflows with teams to building practical digital products for freelance clients.</p>
+            <p className="hero-desc">I connect business needs with technology through SaaS implementation, workflow improvement, and practical digital products.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">Explore selected work <span>↘</span></a>
               <a className="button button-quiet" href="#contact">Discuss a role or project <span>↗</span></a>
@@ -205,45 +205,13 @@ function App() {
           </div>
         </section>
 
-        <section className="ticker" aria-label="Areas of focus">
-          <div className="ticker-track">
-            <span>PRODUCT IMPLEMENTATION</span><b aria-hidden="true">✳</b><span>FULL-STACK PROJECTS</span><b aria-hidden="true">✳</b><span>PROCESS AUTOMATION</span><b aria-hidden="true">✳</b><span>EDTECH SYSTEMS</span><b aria-hidden="true">✳</b>
-            <span aria-hidden="true">PRODUCT IMPLEMENTATION</span><b aria-hidden="true">✳</b><span aria-hidden="true">FULL-STACK PROJECTS</span><b aria-hidden="true">✳</b><span aria-hidden="true">PROCESS AUTOMATION</span><b aria-hidden="true">✳</b>
-          </div>
-        </section>
-            <section className="home-overview container" aria-labelledby="overview-title">
-              <div className="home-overview-heading">
-                <p className="section-kicker">A QUICK INTRODUCTION</p>
-                <h2 id="overview-title">Thoughtful work,<br /><span className="muted-heading">made useful.</span></h2>
-              </div>
-              <div className="home-route-grid">
-                <a className="home-route-card" href="#work">
-                  <span className="home-route-index">01 / SELECTED WORK</span>
-                  <strong>See what I build</strong>
-                  <span>Explore products and digital experiences.</span>
-                  <span className="home-route-arrow">↗</span>
-                </a>
-                <a className="home-route-card" href="#about">
-                  <span className="home-route-index">02 / BACKGROUND</span>
-                  <strong>How I think</strong>
-                  <span>Learn how I connect people, process, and technology.</span>
-                  <span className="home-route-arrow">↗</span>
-                </a>
-                <a className="home-route-card" href="#contact">
-                  <span className="home-route-index">03 / GET IN TOUCH</span>
-                  <strong>Let’s talk</strong>
-                  <span>Start a conversation about a role or project.</span>
-                  <span className="home-route-arrow">↗</span>
-                </a>
-              </div>
-            </section>
           </>
         )}
 
         {(currentPage === "work" || currentPage === "home") && <section className="section container work-section" id="work">
           <div className="section-heading">
-            <div><p className="section-kicker">SELECTED WORK / 01</p>{currentPage === "work" ? <h1 className="section-title">Work that solves<br /><span className="muted-heading">real problems.</span></h1> : <h2>Work that solves<br /><span className="muted-heading">real problems.</span></h2>}</div>
-            <p className="section-intro">A mix of hands-on builds and digital experiences spanning academic scheduling, education workflows, commerce, and automotive care.</p>
+            <div><p className="section-kicker">SELECTED WORK</p>{currentPage === "work" ? <h1 className="section-title">Work that solves<br /><span className="muted-heading">real problems.</span></h1> : <h2>Work that solves<br /><span className="muted-heading">real problems.</span></h2>}</div>
+            <p className="section-intro">Projects across academic scheduling, education workflows, commerce, and automotive care.</p>
           </div>
           <div className="work-toolbar" aria-label="Filter projects">
             <div className="work-filters" role="group" aria-label="Filter projects by type">
@@ -272,16 +240,16 @@ function App() {
             <article className="project-card project-featured" data-category="web-app">
               <div className="project-art project-image-art scheduly-photo-art">
                 <img
-                  src="https://images.ctfassets.net/h83dujey17us/7Jk1lxJlkprlVAzNhm9F9/b40dca2cc193087fd30670e6f3c1694e/News3.png"
-                  alt="Laptop showing a weekly calendar and time-slot scheduling interface"
+                  src="/assets/scheduly-preview.svg"
+                  alt="Scheduly academic timetable interface preview with weekly periods, classes, and conflict status"
                   loading="lazy"
                   decoding="async"
+                  width="960"
+                  height="700"
                 />
-                <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
-                <a className="project-photo-credit" href="https://www.corpay.com/resources/newsroom/corpay-cross-border-using-blockchain-technology-to-facilitate-client-fx-conversions" target="_blank" rel="noreferrer" aria-label="Image reference from Corpay">Image reference: Corpay</a>
               </div>
               <div className="project-content">
-                <div className="project-meta"><span>FULL-STACK WEB APP</span><span>PROJECT 01</span></div>
+                <div className="project-meta"><span>FULL-STACK WEB APP</span></div>
                 <h3>Scheduly — Timetable Generator</h3>
                 <p>Academic scheduling with program/semester mapping, faculty and room constraints, holiday management, validation, publishing, and timetable portals.</p>
                 <div className="tag-list"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
@@ -292,18 +260,18 @@ function App() {
             <article className="project-card" data-category="web-app">
               <div className="project-art project-image-art results-photo-art">
                 <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
-                  alt="Laptop displaying an analytics dashboard with charts, metrics, and reports"
+                  src="/assets/result-generator-preview.svg"
+                  alt="Result Generator dashboard preview with academic result workflow, sample records, and review status"
                   loading="lazy"
                   decoding="async"
+                  width="960"
+                  height="700"
                 />
-                <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
-                <a className="project-photo-credit" href="https://unsplash.com/@kmuza?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by Carlos Muza on Unsplash">Photo: Carlos Muza / Unsplash</a>
               </div>
               <div className="project-content">
-                <div className="project-meta"><span>EDTECH / ERP</span><span>PROJECT 02</span></div>
+                <div className="project-meta"><span>EDTECH / ERP</span></div>
                 <h3>Result Generator</h3>
-                <p>A result management workflow for student records, marks, SGPA/CGPA calculations, rank lists, Excel uploads, and result publishing.</p>
+                <p>A workflow for student records, marks, SGPA/CGPA, rank lists, Excel imports, and result publishing.</p>
                 <div className="tag-list"><span>React</span><span>Express</span><span>MongoDB</span><span>REST API</span></div>
                 <details className="project-details"><summary>Case study: results workflow</summary><div className="case-study"><p><strong>Problem</strong> Academic result preparation requires student and subject records, marks entry or imports, grade calculations, verification, and publication to work together reliably.</p><p><strong>Approach</strong> Organize the process around academic records and repeatable steps, from marks input to result review and publishing.</p><p><strong>Capabilities</strong> Student and faculty records, marks imports, SGPA/CGPA calculations, rank lists, and result publishing workflows.</p></div></details>
                 <div className="project-links"><a href="mailto:abhsingh76@gmail.com?subject=Request%20a%20Result%20Generator%20walkthrough">Request a walkthrough <span>↗</span></a></div>
@@ -317,13 +285,11 @@ function App() {
                   loading="lazy"
                   decoding="async"
                 />
-                <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
-                <a className="project-photo-credit" href="https://unsplash.com/photos/M5lsL2E4ot0?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by Zac Nielson on Unsplash">Photo: Zac Nielson / Unsplash</a>
               </div>
               <div className="project-content">
-                <div className="project-meta"><span>AUTOMOTIVE / SERVICE WEBSITE</span><span>PROJECT 03</span></div>
+                <div className="project-meta"><span>AUTOMOTIVE / SERVICE WEBSITE</span></div>
                 <h3>The Detailing Shelter</h3>
-                <p>A customer-facing web experience for an automotive detailing brand, bringing its identity and services together.</p>
+                <p>A customer-facing website for an automotive detailing brand and its services.</p>
                 <div className="tag-list"><span>Automotive</span><span>Service website</span><span>Responsive UI</span></div>
                 <details className="project-details"><summary>Project highlights</summary><ul><li>Service-led presentation for an automotive brand</li><li>Brand-aligned visual design and page hierarchy</li><li>Responsive customer experience</li></ul></details>
                 <div className="project-links"><a href="https://thedetailingshelter.in/" target="_blank" rel="noreferrer">Live website <span>↗</span></a></div>
@@ -337,13 +303,11 @@ function App() {
                   loading="lazy"
                   decoding="async"
                 />
-                <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
-                <a className="project-photo-credit" href="https://unsplash.com/photos/e8TtkC5xyv4?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by Claudio Schwarz on Unsplash">Photo: Claudio Schwarz / Unsplash</a>
               </div>
               <div className="project-content">
-                <div className="project-meta"><span>COMMERCE CONCEPT</span><span>PROJECT 04</span></div>
+                <div className="project-meta"><span>COMMERCE CONCEPT</span></div>
                 <h3>My Specs Store</h3>
-                <p>An eyewear storefront concept focused on clear product discovery and a clean shopping experience.</p>
+                <p>An eyewear storefront concept with clear product discovery and a simple shopping experience.</p>
                 <div className="tag-list"><span>Web design</span><span>E-commerce</span><span>Responsive UI</span></div>
                 <details className="project-details"><summary>Project highlights</summary><ul><li>Eyewear catalogue and product discovery</li><li>Shopping cart and checkout journey</li><li>Storefront experience for online and cash-on-delivery orders</li></ul></details>
                 <div className="project-links"><a href="https://my-specs-store.vercel.app" target="_blank" rel="noreferrer">Live website <span>↗</span></a></div>
@@ -357,13 +321,11 @@ function App() {
                   loading="lazy"
                   decoding="async"
                 />
-                <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
-                <a className="project-photo-credit" href="https://unsplash.com/photos/modern-living-room-with-stylish-furniture-and-large-windows-FL-ZcDK8tMo?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by Clay Banks on Unsplash">Photo: Clay Banks / Unsplash</a>
               </div>
               <div className="project-content">
-                <div className="project-meta"><span>BRAND WEBSITE</span><span>PROJECT 05</span></div>
+                <div className="project-meta"><span>BRAND WEBSITE</span></div>
                 <h3>Tatvam Vastu</h3>
-                <p>A service-led website concept with a calm visual language, clear sections, and a focus on communicating trust.</p>
+                <p>A calm, service-led website concept designed to communicate trust.</p>
                 <div className="tag-list"><span>UI / UX</span><span>CSS</span><span>Responsive design</span></div>
                 <details className="project-details"><summary>Project highlights</summary><ul><li>Clear service information and page hierarchy</li><li>Calm visual language for a trust-led brand</li><li>Responsive service website structure</li></ul></details>
                 <div className="project-links"><a href="https://tatvamvastu.com/" target="_blank" rel="noreferrer">Live website <span>↗</span></a></div>
@@ -375,7 +337,7 @@ function App() {
         {(currentPage === "about" || currentPage === "home") && <>
         <section className="about-section" id="about">
           <div className="container about-grid">
-            <div><p className="section-kicker">A LITTLE ABOUT ME / 02</p>{currentPage === "about" ? <h1 className="section-title">Business context.<br /><span className="gradient-text">Builder mindset.</span></h1> : <h2>Business context.<br /><span className="gradient-text">Builder mindset.</span></h2>}</div>
+            <div><p className="section-kicker">ABOUT ME</p>{currentPage === "about" ? <h1 className="section-title">Business context.<br /><span className="gradient-text">Builder mindset.</span></h1> : <h2>Business context.<br /><span className="gradient-text">Builder mindset.</span></h2>}</div>
             <div className="about-copy">
               <p className="about-lead">I connect people, processes, and technology.</p>
               <p>With a B.Tech background in Computer Science &amp; Engineering and experience in SaaS and EdTech implementation, I focus on understanding workflows, finding friction, and turning business requirements into systems people can use.</p>
@@ -388,7 +350,7 @@ function App() {
 
         <section className="section container" id="skills">
           <div className="section-heading">
-            <div><p className="section-kicker">WHAT I BRING / 03</p><h2>Skills built around<br /><span className="muted-heading">getting things done.</span></h2></div>
+            <div><p className="section-kicker">WHAT I BRING</p><h2>Skills built around<br /><span className="muted-heading">getting things done.</span></h2></div>
             <p className="section-intro">A practical blend of implementation, product coordination, and hands-on development.</p>
           </div>
           <div className="skills-grid">
@@ -402,27 +364,27 @@ function App() {
 
         {currentPage === "home" && <section className="section container services-section" id="services" aria-labelledby="services-title">
           <div className="section-heading">
-            <div><p className="section-kicker">PRACTICAL WAYS I CAN HELP / 05</p><h2 id="services-title">Good work starts<br /><span className="muted-heading">with a clear need.</span></h2></div>
+            <div><p className="section-kicker">HOW I CAN HELP</p><h2 id="services-title">Good work starts<br /><span className="muted-heading">with a clear need.</span></h2></div>
             <p className="section-intro">Focused support for teams and businesses that need clearer workflows, a useful web experience, or a practical digital tool.</p>
           </div>
           <div className="services-grid">
-            <article className="service-card"><span className="service-index">01 / IMPLEMENTATION</span><div className="service-icon" aria-hidden="true">↗</div><h3>SaaS &amp; workflow support</h3><p>Map requirements, clarify user journeys, support configuration and onboarding, and make operational handoffs easier to follow.</p><a href="/contact.html?service=SaaS%20%26%20workflow%20support#project-enquiry">Discuss this service <span>↗</span></a></article>
-            <article className="service-card"><span className="service-index">02 / WEB APPS</span><div className="service-icon" aria-hidden="true">{ "{ }" }</div><h3>Web apps &amp; internal tools</h3><p>Plan and build practical dashboards, data-entry flows, portals, and reporting tools around a defined business process.</p><a href="/contact.html?service=Web%20app%20or%20internal%20tool#project-enquiry">Discuss this service <span>↗</span></a></article>
-            <article className="service-card"><span className="service-index">03 / WEB PRESENCE</span><div className="service-icon" aria-hidden="true">✳</div><h3>Business websites &amp; stores</h3><p>Create responsive, brand-aligned websites and storefront experiences with clear navigation and customer journeys.</p><a href="/contact.html?service=Business%20website#project-enquiry">Discuss this service <span>↗</span></a></article>
-            <article className="service-card"><span className="service-index">04 / DATA WORKFLOWS</span><div className="service-icon" aria-hidden="true">⌘</div><h3>Data &amp; process improvement</h3><p>Organize import, validation, and reporting steps to reduce avoidable manual work and make exceptions easier to spot.</p><a href="/contact.html?service=Data%20%26%20process%20improvement#project-enquiry">Discuss this service <span>↗</span></a></article>
+            <article className="service-card"><span className="service-index">IMPLEMENTATION</span><div className="service-icon" aria-hidden="true">↗</div><h3>SaaS &amp; workflow support</h3><p>Map requirements, clarify user journeys, support configuration and onboarding, and make operational handoffs easier to follow.</p><a href="/contact.html?service=SaaS%20%26%20workflow%20support#project-enquiry">Discuss this service <span>↗</span></a></article>
+            <article className="service-card"><span className="service-index">WEB APPS</span><div className="service-icon" aria-hidden="true">{ "{ }" }</div><h3>Web apps &amp; internal tools</h3><p>Plan and build practical dashboards, data-entry flows, portals, and reporting tools around a defined business process.</p><a href="/contact.html?service=Web%20app%20or%20internal%20tool#project-enquiry">Discuss this service <span>↗</span></a></article>
+            <article className="service-card"><span className="service-index">WEB PRESENCE</span><div className="service-icon" aria-hidden="true">✳</div><h3>Business websites &amp; stores</h3><p>Create responsive, brand-aligned websites and storefront experiences with clear navigation and customer journeys.</p><a href="/contact.html?service=Business%20website#project-enquiry">Discuss this service <span>↗</span></a></article>
+            <article className="service-card"><span className="service-index">DATA WORKFLOWS</span><div className="service-icon" aria-hidden="true">⌘</div><h3>Data &amp; process improvement</h3><p>Organize import, validation, and reporting steps to reduce avoidable manual work and make exceptions easier to spot.</p><a href="/contact.html?service=Data%20%26%20process%20improvement#project-enquiry">Discuss this service <span>↗</span></a></article>
           </div>
         </section>}
         {currentPage === "home" && <section className="section container collaboration-section" aria-labelledby="collaboration-title">
-          <div className="section-heading"><div><p className="section-kicker">WAYS TO WORK TOGETHER / 04</p><h2 id="collaboration-title">Two ways to create<br /><span className="muted-heading">useful impact.</span></h2></div><p className="section-intro">I’m open to both full-time opportunities and focused, project-based collaborations.</p></div>
+          <div className="section-heading"><div><p className="section-kicker">CAREER & FREELANCE</p><h2 id="collaboration-title">Two ways to create<br /><span className="muted-heading">useful impact.</span></h2></div><p className="section-intro">I’m open to both full-time opportunities and focused, project-based collaborations.</p></div>
           <div className="collaboration-grid">
-            <article className="collaboration-card"><span className="collaboration-number">01 / CAREER</span><h3>Join a team</h3><p>Bring structured implementation, stakeholder coordination, SaaS workflows, and a product-minded approach to delivery.</p><a href="mailto:abhsingh76@gmail.com?subject=Career%20opportunity">Discuss a role <span>↗</span></a></article>
-            <article className="collaboration-card"><span className="collaboration-number">02 / FREELANCE</span><h3>Build a useful solution</h3><p>Collaborate on responsive websites, practical web apps, and clearer workflows for a real business need.</p><a href="mailto:abhsingh76@gmail.com?subject=Freelance%20project">Discuss a project <span>↗</span></a></article>
+            <article className="collaboration-card"><span className="collaboration-number">CAREER</span><h3>Join a team</h3><p>Bring structured implementation, stakeholder coordination, SaaS workflows, and a product-minded approach to delivery.</p><a href="mailto:abhsingh76@gmail.com?subject=Career%20opportunity">Discuss a role <span>↗</span></a></article>
+            <article className="collaboration-card"><span className="collaboration-number">FREELANCE</span><h3>Build a useful solution</h3><p>Collaborate on responsive websites, practical web apps, and clearer workflows for a real business need.</p><a href="mailto:abhsingh76@gmail.com?subject=Freelance%20project">Discuss a project <span>↗</span></a></article>
           </div>
         </section>}
 
         {(currentPage === "contact" || currentPage === "home") && <section className="contact-section" id="contact">
           <div className="container contact-inner">
-            <p className="section-kicker">CAREER OPPORTUNITIES &amp; FREELANCE / 04</p>
+            <p className="section-kicker">CAREER &amp; FREELANCE</p>
             {currentPage === "contact" ? <h1 className="section-title">Let’s make something<br /><span className="gradient-text">that matters.</span></h1> : <h2>Let’s make something<br /><span className="gradient-text">that matters.</span></h2>}
             <p>I’m open to career opportunities and freelance collaborations in SaaS implementation, web products, and workflow improvement.</p>
             <div className="contact-actions"><a className="button button-primary" href="mailto:abhsingh76@gmail.com?subject=Let%27s%20connect">Email me <span>↗</span></a><a className="button button-whatsapp" href="https://wa.me/919956191939" target="_blank" rel="noreferrer">WhatsApp me <span>↗</span></a></div>
