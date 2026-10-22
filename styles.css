@@ -1164,3 +1164,13 @@ body{
 .scheduly-photo-art img{object-position:center 53%;filter:saturate(.88) contrast(1.04)}
 .results-photo-art img{object-position:center 49%;filter:saturate(.90) contrast(1.03)}
 .scheduly-photo-art:hover img,.results-photo-art:hover img{filter:saturate(1.02) contrast(1.04)}
+
+/* Enquiry form server-submission states and spam honeypot */
+.enquiry-honeypot{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.enquiry-submit-row button:disabled{opacity:.65;cursor:wait;transform:none}
+.enquiry-status{font-size:11px!important;line-height:1.65!important;margin:0!important}
+.enquiry-status-idle{color:var(--muted)}
+.enquiry-status-sending{color:var(--purple)}
+.enquiry-status-success{color:var(--green)}
+.enquiry-status-error,.enquiry-fallback{color:#ffb4bc!important}
+.enquiry-fallback a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
