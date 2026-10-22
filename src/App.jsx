@@ -314,13 +314,13 @@ function App() {
             <article className="project-card" data-category="website">
               <div className="project-art project-image-art detailing-photo-art">
                 <img
-                  src="https://images.unsplash.com/photo-1761934658038-d0e6792378b1?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1400"
-                  alt="A microfiber cloth resting on the glossy blue paint of a freshly detailed car"
+                  src="https://images.unsplash.com/photo-1614888441158-de25f0ea4bc5?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=82&amp;w=1400"
+                  alt="A professional detailer polishing a car’s paintwork"
                   loading="lazy"
                   decoding="async"
                 />
                 <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
-                <a className="project-photo-credit" href="https://unsplash.com/@gogonano?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by GoGoNano on Unsplash">Photo: GoGoNano / Unsplash</a>
+                <a className="project-photo-credit" href="https://unsplash.com/photos/man-in-white-t-shirt-standing-beside-red-car-q94A6k81lAQ?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by Zac Nielson on Unsplash">Photo: Zac Nielson / Unsplash</a>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>AUTOMOTIVE / SERVICE WEBSITE</span><span>PROJECT 03</span></div>
@@ -334,13 +334,13 @@ function App() {
             <article className="project-card" data-category="website commerce">
               <div className="project-art project-image-art eyewear-photo-art">
                 <img
-                  src="https://images.unsplash.com/photo-1523657895111-376b5d07a55a?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1400"
-                  alt="Black-framed eyeglasses photographed on a clean white surface"
+                  src="https://images.unsplash.com/photo-1661525244755-3dc7926c347a?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=82&amp;w=1400"
+                  alt="Sunglasses and optical frames photographed against a clean light background"
                   loading="lazy"
                   decoding="async"
                 />
                 <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
-                <a className="project-photo-credit" href="https://unsplash.com/@jessbaileydesigns?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by Jess Bailey on Unsplash">Photo: Jess Bailey / Unsplash</a>
+                <a className="project-photo-credit" href="https://unsplash.com/photos/a-pair-of-sunglasses-aqAHdkNQMrI?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by Anuj Rawat on Unsplash">Photo: Anuj Rawat / Unsplash</a>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>COMMERCE CONCEPT</span><span>PROJECT 04</span></div>
@@ -354,13 +354,13 @@ function App() {
             <article className="project-card project-wide" data-category="website">
               <div className="project-art project-image-art vastu-photo-art">
                 <img
-                  src="https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1400"
-                  alt="A modern living room with neutral seating, minimalist decor, and natural light"
+                  src="https://images.unsplash.com/photo-1724582586529-62622e50c0b3?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=82&amp;w=1400"
+                  alt="A refined modern living room with neutral seating, a large window, and natural light"
                   loading="lazy"
                   decoding="async"
                 />
                 <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
-                <a className="project-photo-credit" href="https://unsplash.com/@goodlifeconstruction?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by GoodLifeConstruction on Unsplash">Photo: GoodLifeConstruction / Unsplash</a>
+                <a className="project-photo-credit" href="https://unsplash.com/photos/a-modern-living-room-with-a-large-window-vIbxvHj9m9g?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by Prydumano Design on Unsplash">Photo: Prydumano Design / Unsplash</a>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>BRAND WEBSITE</span><span>PROJECT 05</span></div>
