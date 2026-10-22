@@ -292,13 +292,13 @@ function App() {
             <article className="project-card" data-category="web-app">
               <div className="project-art project-image-art results-photo-art">
                 <img
-                  src="https://www.ibo.org/globalassets/new-structure/headers/imgs/ib-insights.jpg"
-                  alt="Laptop showing an education assessment analytics dashboard with grade-comparison charts"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                  alt="Laptop displaying an analytics dashboard with charts, metrics, and reports"
                   loading="lazy"
                   decoding="async"
                 />
                 <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
-                <a className="project-photo-credit" href="https://www.ibo.org/news/news-about-the-ib/introducing-ib-insights-the-ibs-new-interactive-assessment-data-analysis-tool/" target="_blank" rel="noreferrer" aria-label="Image reference from International Baccalaureate">Image reference: IB Insights</a>
+                <a className="project-photo-credit" href="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" target="_blank" rel="noreferrer" aria-label="Image reference hosted by Unsplash">Image reference: Unsplash</a>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>EDTECH / ERP</span><span>PROJECT 02</span></div>
