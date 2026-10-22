@@ -314,12 +314,13 @@ function App() {
             <article className="project-card" data-category="website">
               <div className="project-art project-image-art detailing-photo-art">
                 <img
-                  src="https://images.unsplash.com/photo-1746593934498-b335e4e04845?auto=format&amp;fit=crop&amp;w=1400&amp;q=82"
-                  alt="A glossy black car inside a modern automotive detailing studio"
+                  src="https://images.unsplash.com/photo-1761934658038-d0e6792378b1?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1400"
+                  alt="A microfiber cloth resting on the glossy blue paint of a freshly detailed car"
                   loading="lazy"
                   decoding="async"
                 />
                 <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
+                <a className="project-photo-credit" href="https://unsplash.com/@gogonano?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by GoGoNano on Unsplash">Photo: GoGoNano / Unsplash</a>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>AUTOMOTIVE / SERVICE WEBSITE</span><span>PROJECT 03</span></div>
@@ -333,12 +334,13 @@ function App() {
             <article className="project-card" data-category="website commerce">
               <div className="project-art project-image-art eyewear-photo-art">
                 <img
-                  src="https://images.unsplash.com/photo-1769414017326-6ea5d70f7884?auto=format&amp;fit=crop&amp;w=1400&amp;q=82"
-                  alt="Modern eyeglasses photographed as a clean eyewear product image"
+                  src="https://images.unsplash.com/photo-1523657895111-376b5d07a55a?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1400"
+                  alt="Black-framed eyeglasses photographed on a clean white surface"
                   loading="lazy"
                   decoding="async"
                 />
                 <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
+                <a className="project-photo-credit" href="https://unsplash.com/@jessbaileydesigns?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by Jess Bailey on Unsplash">Photo: Jess Bailey / Unsplash</a>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>COMMERCE CONCEPT</span><span>PROJECT 04</span></div>
@@ -352,12 +354,13 @@ function App() {
             <article className="project-card project-wide" data-category="website">
               <div className="project-art project-image-art vastu-photo-art">
                 <img
-                  src="https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&amp;fit=crop&amp;w=1400&amp;q=82"
-                  alt="A warm, minimalist living room with neutral furniture and natural light"
+                  src="https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1400"
+                  alt="A modern living room with neutral seating, minimalist decor, and natural light"
                   loading="lazy"
                   decoding="async"
                 />
                 <span className="project-art-label" aria-hidden="true">VISUAL REFERENCE</span>
+                <a className="project-photo-credit" href="https://unsplash.com/@goodlifeconstruction?utm_source=akashworks&amp;utm_medium=referral" target="_blank" rel="noreferrer" aria-label="Photo by GoodLifeConstruction on Unsplash">Photo: GoodLifeConstruction / Unsplash</a>
               </div>
               <div className="project-content">
                 <div className="project-meta"><span>BRAND WEBSITE</span><span>PROJECT 05</span></div>
