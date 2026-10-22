@@ -162,15 +162,10 @@ function App() {
               <a className="button button-quiet" href="#contact">Discuss a role or project <span>↗</span></a>
               <a className="button button-quiet" href="/resume.pdf" download="Akash-Singh-Resume.pdf">Download résumé <span>↓</span></a>
             </div>
-            <div className="hero-meta">
-              <div><strong>Career opportunities</strong><span>SaaS · Implementation · Product</span></div>
-              <div><strong>Freelance projects</strong><span>Web apps · Websites · Workflows</span></div>
-            </div>
           </div>
           <div className="hero-visual" role="img" aria-label="Abstract product dashboard illustration">
             <div className="orbit orbit-a" />
             <div className="orbit orbit-b" />
-            <div className="visual-label label-top"><span className="tiny-square" /> SYSTEMS THINKING</div>
             <div className="dashboard-card">
               <div className="dash-top">
                 <div className="window-dots"><i /><i /><i /></div>
@@ -200,8 +195,6 @@ function App() {
               </div>
             </div>
             <div className="floating-chip chip-one"><span className="chip-icon">↗</span><div><strong>Built for impact</strong><small>Practical solutions</small></div></div>
-            <div className="floating-chip chip-two"><span className="chip-icon chip-green">✓</span><div><strong>Ready to improve</strong><small>Iterate with purpose</small></div></div>
-            <div className="visual-label label-bottom">IDEAS → IMPLEMENTATION → IMPACT</div>
           </div>
         </section>
 
