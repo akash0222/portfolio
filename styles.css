@@ -1159,3 +1159,8 @@ body{
 
 /* Fixed project image frame so cards align consistently */
 .project-image-art{contain:paint}
+
+/* Academic product-card image references */
+.scheduly-photo-art img{object-position:center 53%;filter:saturate(.88) contrast(1.04)}
+.results-photo-art img{object-position:center 49%;filter:saturate(.90) contrast(1.03)}
+.scheduly-photo-art:hover img,.results-photo-art:hover img{filter:saturate(1.02) contrast(1.04)}
