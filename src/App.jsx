@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeWorkFilter, setActiveWorkFilter] = useState("all");
+  const [enquiryState, setEnquiryState] = useState("idle");
+  const [enquiryStatus, setEnquiryStatus] = useState("");
   const [theme, setTheme] = useState(() => (
     window.localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark"
   ));
@@ -58,32 +60,45 @@ function App() {
     };
   }, []);
 
-  function handleEnquirySubmit(event) {
+  async function handleEnquirySubmit(event) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const name = String(formData.get("name") || "").trim();
-    const email = String(formData.get("email") || "").trim();
-    const service = String(formData.get("service") || "Project enquiry").trim();
-    const budget = String(formData.get("budget") || "Not specified").trim();
-    const message = String(formData.get("message") || "").trim();
-    const subject = "Portfolio enquiry: " + service;
-    const body = [
-      "Hello Akash,",
-      "",
-      "I would like to discuss a project.",
-      "",
-      "Name: " + name,
-      "Email: " + email,
-      "Project type: " + service,
-      "Estimated budget: " + budget,
-      "",
-      "Project details:",
-      message,
-      "",
-      "Sent from the AKASH / WORKS portfolio enquiry form.",
-    ].join("\n");
+    if (enquiryState === "sending") return;
 
-    window.location.href = "mailto:abhsingh76@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    const formElement = event.currentTarget;
+    const formData = new FormData(formElement);
+    const payload = {
+      name: String(formData.get("name") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      service: String(formData.get("service") || "").trim(),
+      budget: String(formData.get("budget") || "").trim(),
+      message: String(formData.get("message") || "").trim(),
+      website: String(formData.get("website") || "").trim(),
+    };
+
+    setEnquiryState("sending");
+    setEnquiryStatus("Sending your enquiry…");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || "Your enquiry could not be sent. Please email Akash directly.");
+      }
+
+      formElement.reset();
+      setEnquiryState("success");
+      setEnquiryStatus("Thanks — your enquiry has been sent successfully. Akash will reply by email.");
+    } catch (error) {
+      setEnquiryState("error");
+      setEnquiryStatus(error instanceof Error
+        ? error.message
+        : "Your enquiry could not be sent. Please email Akash directly.");
+    }
   }
   function closeMenu() {
     setMenuOpen(false);
@@ -384,7 +399,7 @@ function App() {
           </div>
           {(currentPage === "contact" || currentPage === "home") && <div className="container enquiry-wrap" id="project-enquiry">
             <div className="enquiry-intro"><p className="section-kicker">FREELANCE PROJECT ENQUIRY</p><h2>Tell me a little<br /><span className="muted-heading">about the work.</span></h2><p>Share the basics so I can understand what you need and prepare for a useful first conversation.</p></div>
-            <form className="enquiry-form" onSubmit={handleEnquirySubmit}>
+            <form className="enquiry-form" onSubmit={handleEnquirySubmit} aria-describedby="enquiry-status">
               <div className="enquiry-fields enquiry-fields-two">
                 <div className="enquiry-field"><label htmlFor="enquiry-name">Your name</label><input id="enquiry-name" name="name" type="text" autoComplete="name" placeholder="Name" maxLength={100} required /></div>
                 <div className="enquiry-field"><label htmlFor="enquiry-email">Email address</label><input id="enquiry-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" maxLength={160} required /></div>
@@ -393,8 +408,13 @@ function App() {
                 <div className="enquiry-field"><label htmlFor="enquiry-service">What do you need?</label><select id="enquiry-service" name="service" defaultValue={selectedService} required><option value="" disabled>Select a service</option><option>SaaS &amp; workflow support</option><option>Web app or internal tool</option><option>Business website</option><option>E-commerce storefront</option><option>Data &amp; process improvement</option><option>Other / not sure yet</option></select></div>
                 <div className="enquiry-field"><label htmlFor="enquiry-budget">Estimated budget (optional)</label><select id="enquiry-budget" name="budget" defaultValue=""><option value="">Not decided yet</option><option>Under ₹25,000</option><option>₹25,000–₹75,000</option><option>₹75,000+</option><option>Need help estimating</option></select></div>
               </div>
-              <div className="enquiry-field"><label htmlFor="enquiry-message">Project brief</label><textarea id="enquiry-message" name="message" placeholder="What are you trying to improve or build? Include any key requirements or target date." rows={5} maxLength={1500} required /></div>
-              <div className="enquiry-submit-row"><button className="button button-primary" type="submit">Prepare enquiry email <span>↗</span></button><p>Your email app will open with a draft addressed to Akash. Nothing is sent automatically.</p></div>
+              <div className="enquiry-field"><label htmlFor="enquiry-message">Project brief</label><textarea id="enquiry-message" name="message" placeholder="What are you trying to improve or build? Include any key requirements or target date." rows={5} maxLength={1500} minLength={10} required /></div>
+              <div className="enquiry-honeypot" aria-hidden="true"><label htmlFor="enquiry-website">Leave this field empty</label><input id="enquiry-website" name="website" type="text" tabIndex={-1} autoComplete="off" /></div>
+              <div className="enquiry-submit-row">
+                <button className="button button-primary" type="submit" disabled={enquiryState === "sending"}>{enquiryState === "sending" ? "Sending…" : "Send enquiry"} <span aria-hidden="true">{enquiryState === "sending" ? "…" : "↗"}</span></button>
+                <p id="enquiry-status" className={`enquiry-status enquiry-status-${enquiryState}`} role="status" aria-live="polite">{enquiryStatus || "Your enquiry will be sent directly to Akash by email."}</p>
+                {enquiryState === "error" && <p className="enquiry-fallback">You can also email <a href="mailto:abhsingh76@gmail.com">abhsingh76@gmail.com</a>.</p>}
+              </div>
             </form>
           </div>}
         </section>}
