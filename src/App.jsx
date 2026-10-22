@@ -122,6 +122,7 @@ function App() {
             <div className="hero-actions">
               <a className="button button-primary" href="#work">Explore selected work <span>↘</span></a>
               <a className="button button-quiet" href="#contact">Discuss a role or project <span>↗</span></a>
+              <a className="button button-quiet" href="/resume.pdf" download="Akash-Singh-Resume.pdf">Download résumé <span>↓</span></a>
             </div>
             <div className="hero-meta">
               <div><strong>Career opportunities</strong><span>SaaS · Implementation · Product</span></div>
@@ -249,7 +250,7 @@ function App() {
                 <h3>Scheduly — Timetable Generator</h3>
                 <p>Academic scheduling with program/semester mapping, faculty and room constraints, holiday management, validation, publishing, and timetable portals.</p>
                 <div className="tag-list"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
-                <details className="project-details"><summary>Project highlights</summary><ul><li>Program and semester-aware timetable setup</li><li>Faculty, section, and room conflict constraints</li><li>Holiday-aware scheduling and timetable portals</li></ul></details>
+                <details className="project-details"><summary>Case study: constraints &amp; approach</summary><div className="case-study"><p><strong>Problem</strong> Academic timetables need to coordinate multiple programs, semesters, period timings, faculty, sections, rooms, and holidays.</p><p><strong>Approach</strong> Model the academic setup and validate scheduling constraints, then make conflicts and unscheduled sessions easier to investigate.</p><p><strong>Capabilities</strong> Program/semester mapping, faculty and room conflict checks, holiday handling, publishing, and role-specific timetable portals.</p></div></details>
                 <div className="project-links"><a href="https://time-table-beige-three.vercel.app" target="_blank" rel="noreferrer">Live product <span>↗</span></a></div>
               </div>
             </article>
@@ -266,7 +267,7 @@ function App() {
                 <h3>Result Generator</h3>
                 <p>A result management workflow for student records, marks, SGPA/CGPA calculations, rank lists, Excel uploads, and result publishing.</p>
                 <div className="tag-list"><span>React</span><span>Express</span><span>MongoDB</span><span>REST API</span></div>
-                <details className="project-details"><summary>Project highlights</summary><ul><li>Student, faculty, and academic records</li><li>Marks imports with SGPA/CGPA calculation workflows</li><li>Rank lists and result publishing processes</li></ul></details>
+                <details className="project-details"><summary>Case study: results workflow</summary><div className="case-study"><p><strong>Problem</strong> Academic result preparation requires student and subject records, marks entry or imports, grade calculations, verification, and publication to work together reliably.</p><p><strong>Approach</strong> Organize the process around academic records and repeatable steps, from marks input to result review and publishing.</p><p><strong>Capabilities</strong> Student and faculty records, marks imports, SGPA/CGPA calculations, rank lists, and result publishing workflows.</p></div></details>
                 <div className="project-links"><a href="mailto:abhsingh76@gmail.com?subject=Request%20a%20Result%20Generator%20walkthrough">Request a walkthrough <span>↗</span></a></div>
               </div>
             </article>
@@ -363,9 +364,10 @@ function App() {
             <div><p className="section-kicker">A LITTLE ABOUT ME / 02</p>{currentPage === "about" ? <h1 className="section-title">Business context.<br /><span className="gradient-text">Builder mindset.</span></h1> : <h2>Business context.<br /><span className="gradient-text">Builder mindset.</span></h2>}</div>
             <div className="about-copy">
               <p className="about-lead">I connect people, processes, and technology.</p>
-              <p>With a Computer Science background and experience in SaaS and EdTech implementation, I focus on understanding workflows, finding friction, and helping turn business requirements into useful systems.</p>
-              <p>Alongside implementation work, I build full-stack projects to explore product thinking, data workflows, automation, and better user experiences.</p>
+              <p>With a B.Tech background in Computer Science &amp; Engineering and experience in SaaS and EdTech implementation, I focus on understanding workflows, finding friction, and turning business requirements into systems people can use.</p>
+              <p>My work combines implementation and stakeholder coordination with hands-on product building. Selected projects cover academic scheduling, result workflows, commerce, and customer-facing business websites.</p>
               <div className="about-facts"><div><strong>01</strong><span>Understand the problem</span></div><div><strong>02</strong><span>Design the workflow</span></div><div><strong>03</strong><span>Build and iterate</span></div></div>
+              <div className="career-snapshot" aria-label="Career snapshot"><div><span>BACKGROUND</span><strong>B.Tech · Computer Science &amp; Engineering</strong></div><div><span>DOMAIN FOCUS</span><strong>SaaS &amp; EdTech implementation</strong></div><div><span>BUILDING WITH</span><strong>React · Node.js · MongoDB</strong></div></div>
             </div>
           </div>
         </section>
