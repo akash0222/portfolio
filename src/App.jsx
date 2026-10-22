@@ -132,7 +132,7 @@ function App() {
             <a href={currentPage === "home" ? "#about" : "/about.html"} aria-current={currentPage === "about" ? "page" : undefined} onClick={closeMenu}>About</a>
             <a href={currentPage === "home" ? "#skills" : "/about.html#skills"} onClick={closeMenu}>Skills</a>
             <a href={currentPage === "home" ? "#services" : "/#services"} onClick={closeMenu}>Services</a>
-            <a href={currentPage === "home" ? "#contact" : "/contact.html#project-enquiry"} className="nav-cta" aria-current={currentPage === "contact" ? "page" : undefined} onClick={closeMenu}>Let's talk <span>↗</span></a>
+            <a href={currentPage === "home" ? "#project-enquiry" : "/contact.html#project-enquiry"} className="nav-cta" aria-current={currentPage === "contact" ? "page" : undefined} onClick={closeMenu}>Let's talk <span>↗</span></a>
             <button
               className="theme-toggle"
               type="button"
