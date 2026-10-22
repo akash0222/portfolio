@@ -48,6 +48,33 @@ function App() {
     };
   }, []);
 
+  function handleEnquirySubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const service = String(formData.get("service") || "Project enquiry").trim();
+    const budget = String(formData.get("budget") || "Not specified").trim();
+    const message = String(formData.get("message") || "").trim();
+    const subject = "Portfolio enquiry: " + service;
+    const body = [
+      "Hello Akash,",
+      "",
+      "I would like to discuss a project.",
+      "",
+      "Name: " + name,
+      "Email: " + email,
+      "Project type: " + service,
+      "Estimated budget: " + budget,
+      "",
+      "Project details:",
+      message,
+      "",
+      "Sent from the AKASH / WORKS portfolio enquiry form.",
+    ].join("\n");
+
+    window.location.href = "mailto:abhsingh76@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
   function closeMenu() {
     setMenuOpen(false);
   }
@@ -94,6 +121,7 @@ function App() {
             <a href={currentPage === "home" ? "#work" : "/work.html"} aria-current={currentPage === "work" ? "page" : undefined} onClick={closeMenu}>Work</a>
             <a href={currentPage === "home" ? "#about" : "/about.html"} aria-current={currentPage === "about" ? "page" : undefined} onClick={closeMenu}>About</a>
             <a href={currentPage === "home" ? "#skills" : "/about.html#skills"} onClick={closeMenu}>Skills</a>
+            <a href={currentPage === "home" ? "#services" : "/#services"} onClick={closeMenu}>Services</a>
             <a href={currentPage === "home" ? "#contact" : "/contact.html"} className="nav-cta" aria-current={currentPage === "contact" ? "page" : undefined} onClick={closeMenu}>Let's talk <span>↗</span></a>
             <button
               className="theme-toggle"
@@ -386,6 +414,18 @@ function App() {
         </section>
         </>}
 
+        {currentPage === "home" && <section className="section container services-section" id="services" aria-labelledby="services-title">
+          <div className="section-heading">
+            <div><p className="section-kicker">PRACTICAL WAYS I CAN HELP / 05</p><h2 id="services-title">Good work starts<br /><span className="muted-heading">with a clear need.</span></h2></div>
+            <p className="section-intro">Focused support for teams and businesses that need clearer workflows, a useful web experience, or a practical digital tool.</p>
+          </div>
+          <div className="services-grid">
+            <article className="service-card"><span className="service-index">01 / IMPLEMENTATION</span><div className="service-icon" aria-hidden="true">↗</div><h3>SaaS &amp; workflow support</h3><p>Map requirements, clarify user journeys, support configuration and onboarding, and make operational handoffs easier to follow.</p><a href="/contact.html?service=SaaS%20%26%20workflow%20support">Discuss this service <span>↗</span></a></article>
+            <article className="service-card"><span className="service-index">02 / WEB APPS</span><div className="service-icon" aria-hidden="true">{ "{ }" }</div><h3>Web apps &amp; internal tools</h3><p>Plan and build practical dashboards, data-entry flows, portals, and reporting tools around a defined business process.</p><a href="/contact.html?service=Web%20apps%20%26%20internal%20tools">Discuss this service <span>↗</span></a></article>
+            <article className="service-card"><span className="service-index">03 / WEB PRESENCE</span><div className="service-icon" aria-hidden="true">✳</div><h3>Business websites &amp; stores</h3><p>Create responsive, brand-aligned websites and storefront experiences with clear navigation and customer journeys.</p><a href="/contact.html?service=Business%20website%20or%20store">Discuss this service <span>↗</span></a></article>
+            <article className="service-card"><span className="service-index">04 / DATA WORKFLOWS</span><div className="service-icon" aria-hidden="true">⌘</div><h3>Data &amp; process improvement</h3><p>Organize import, validation, and reporting steps to reduce avoidable manual work and make exceptions easier to spot.</p><a href="/contact.html?service=Data%20%26%20process%20improvement">Discuss this service <span>↗</span></a></article>
+          </div>
+        </section>}
         {currentPage === "home" && <section className="section container collaboration-section" aria-labelledby="collaboration-title">
           <div className="section-heading"><div><p className="section-kicker">WAYS TO WORK TOGETHER / 04</p><h2 id="collaboration-title">Two ways to create<br /><span className="muted-heading">useful impact.</span></h2></div><p className="section-intro">I’m open to both full-time opportunities and focused, project-based collaborations.</p></div>
           <div className="collaboration-grid">
@@ -399,8 +439,23 @@ function App() {
             <p className="section-kicker">CAREER OPPORTUNITIES &amp; FREELANCE / 04</p>
             {currentPage === "contact" ? <h1 className="section-title">Let’s make something<br /><span className="gradient-text">that matters.</span></h1> : <h2>Let’s make something<br /><span className="gradient-text">that matters.</span></h2>}
             <p>I’m open to career opportunities and freelance collaborations in SaaS implementation, web products, and workflow improvement.</p>
-            <div className="contact-actions"><a className="button button-primary" href="mailto:abhsingh76@gmail.com?subject=Let's%20connect">Email me <span>↗</span></a><a className="button button-whatsapp" href="https://wa.me/919956191939" target="_blank" rel="noreferrer">WhatsApp me <span>↗</span></a></div>
+            <div className="contact-actions"><a className="button button-primary" href="mailto:abhsingh76@gmail.com?subject=Let%27s%20connect">Email me <span>↗</span></a><a className="button button-whatsapp" href="https://wa.me/919956191939" target="_blank" rel="noreferrer">WhatsApp me <span>↗</span></a></div>
           </div>
+          {currentPage === "contact" && <div className="container enquiry-wrap" id="project-enquiry">
+            <div className="enquiry-intro"><p className="section-kicker">FREELANCE PROJECT ENQUIRY</p><h2>Tell me a little<br /><span className="muted-heading">about the work.</span></h2><p>Share the basics so I can understand what you need and prepare for a useful first conversation.</p></div>
+            <form className="enquiry-form" onSubmit={handleEnquirySubmit}>
+              <div className="enquiry-fields enquiry-fields-two">
+                <div className="enquiry-field"><label htmlFor="enquiry-name">Your name</label><input id="enquiry-name" name="name" type="text" autoComplete="name" placeholder="Name" maxLength={100} required /></div>
+                <div className="enquiry-field"><label htmlFor="enquiry-email">Email address</label><input id="enquiry-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" maxLength={160} required /></div>
+              </div>
+              <div className="enquiry-fields enquiry-fields-two">
+                <div className="enquiry-field"><label htmlFor="enquiry-service">What do you need?</label><select id="enquiry-service" name="service" defaultValue="" required><option value="" disabled>Select a service</option><option>SaaS &amp; workflow support</option><option>Web app or internal tool</option><option>Business website</option><option>E-commerce storefront</option><option>Data &amp; process improvement</option><option>Other / not sure yet</option></select></div>
+                <div className="enquiry-field"><label htmlFor="enquiry-budget">Estimated budget (optional)</label><select id="enquiry-budget" name="budget" defaultValue=""><option value="">Not decided yet</option><option>Under ₹25,000</option><option>₹25,000–₹75,000</option><option>₹75,000+</option><option>Need help estimating</option></select></div>
+              </div>
+              <div className="enquiry-field"><label htmlFor="enquiry-message">Project brief</label><textarea id="enquiry-message" name="message" placeholder="What are you trying to improve or build? Include any key requirements or target date." rows={5} maxLength={1500} required /></div>
+              <div className="enquiry-submit-row"><button className="button button-primary" type="submit">Prepare enquiry email <span>↗</span></button><p>Your email app will open with a draft addressed to Akash. Nothing is sent automatically.</p></div>
+            </form>
+          </div>}
         </section>}
       </main>
 
