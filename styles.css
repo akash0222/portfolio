@@ -1096,3 +1096,39 @@ body{
 .case-study strong{color:var(--text);margin-right:5px}
 @media(min-width:720px){.career-snapshot{grid-template-columns:1fr;max-width:560px}}
 @media(max-width:520px){.hero-actions .button{width:100%;justify-content:space-between}.career-snapshot>div{grid-template-columns:1fr;gap:4px}}
+
+/* Phase 2: services and project enquiry */
+.services-section{padding-top:35px}
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.service-card{position:relative;display:flex;flex-direction:column;min-height:270px;padding:25px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#151d31,#0e1525 92%);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.service-index{font:9px var(--mono);letter-spacing:.1em;color:var(--purple)}
+.service-icon{display:grid;place-items:center;width:40px;height:40px;margin-top:23px;border:1px solid #a99bff38;border-radius:11px;background:#a99bff12;color:var(--purple);font-size:20px}
+.service-card h3{margin:17px 0 8px;font-size:17px;letter-spacing:-.03em}
+.service-card p{margin:0 0 20px;max-width:50ch;color:var(--muted);font-size:12px;line-height:1.85}
+.service-card>a{display:inline-flex;align-items:center;gap:9px;margin-top:auto;width:fit-content;font-size:10px;font-weight:800}
+.service-card>a span{color:var(--purple)}
+@media(hover:hover){.service-card:hover{transform:translateY(-4px);border-color:#b6a3ff66;box-shadow:0 18px 44px #0003}}
+:root[data-theme="light"] .service-card{border-color:#34415c20;background:linear-gradient(145deg,#fff,#edf1f8 95%)}
+:root[data-theme="light"] .service-card>a{color:#253149}
+.enquiry-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:54px;align-items:start;margin-top:72px;padding-top:48px;border-top:1px solid var(--line);text-align:left}
+.enquiry-intro h2{font-size:clamp(32px,4vw,44px)}
+.enquiry-intro>p:not(.section-kicker){max-width:370px;color:var(--muted);font-size:12px;line-height:1.9;margin-top:18px}
+.enquiry-form{display:grid;gap:18px;padding:24px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#151d31,#0e1525 92%);text-align:left}
+.enquiry-fields{display:grid;gap:16px}
+.enquiry-fields-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.enquiry-field{display:grid;gap:8px;min-width:0}
+.enquiry-field label{font-size:11px;font-weight:700;color:var(--text)}
+.enquiry-field input,.enquiry-field select,.enquiry-field textarea{width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit;font-size:12px;padding:12px 13px;outline:none;transition:border-color .18s ease,box-shadow .18s ease}
+.enquiry-field input::placeholder,.enquiry-field textarea::placeholder{color:#7f8aa5}
+.enquiry-field select{appearance:auto}
+.enquiry-field textarea{resize:vertical;min-height:125px}
+.enquiry-field input:focus-visible,.enquiry-field select:focus-visible,.enquiry-field textarea:focus-visible{border-color:var(--purple);box-shadow:0 0 0 3px #a99bff24}
+.enquiry-submit-row{display:grid;gap:10px;justify-items:start}
+.enquiry-submit-row .button{border:0;cursor:pointer;font-family:inherit}
+.enquiry-submit-row p{margin:0;color:var(--muted);font-size:10px;line-height:1.7}
+:root[data-theme="light"] .service-card,:root[data-theme="light"] .enquiry-form{background:linear-gradient(145deg,#fff,#edf1f8 92%)}
+:root[data-theme="light"] .enquiry-field input,:root[data-theme="light"] .enquiry-field select,:root[data-theme="light"] .enquiry-field textarea{background:#fff;border-color:#2534512e;color:#18223a}
+:root[data-theme="light"] .enquiry-field label{color:#253149}
+@media(max-width:800px){.enquiry-wrap{grid-template-columns:1fr;gap:28px}.enquiry-intro>p:not(.section-kicker){max-width:560px}}
+@media(max-width:680px){.services-section{padding-top:10px}.services-grid{grid-template-columns:minmax(0,1fr)}.service-card{min-height:235px;padding:22px}.enquiry-wrap{margin-top:48px;padding-top:34px}.enquiry-form{padding:17px}.enquiry-fields-two{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.service-card{transition:none}}
