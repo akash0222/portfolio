@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" role="img" aria-labelledby="title desc">
+<title id="title">Result Generator preview</title>
+<desc id="desc">An academic results dashboard showing semester grade summaries, a student result table, and publishing review states.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#15334b"/><stop offset=".5" stop-color="#111f35"/><stop offset="1" stop-color="#11172a"/></linearGradient>
+ <linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#182b43"/><stop offset="1" stop-color="#132137"/></linearGradient>
+ <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#83e1bf"/><stop offset="1" stop-color="#67a9e8"/></linearGradient>
+ <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#9bbce1" stroke-opacity=".06"/></pattern>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#020611" flood-opacity=".35"/></filter>
+</defs>
+<rect width="960" height="700" fill="url(#bg)"/><rect width="960" height="700" fill="url(#grid)"/><circle cx="855" cy="30" r="185" fill="#63b7db" opacity=".06"/>
+<rect x="44" y="36" width="872" height="628" rx="20" fill="#101a2c" stroke="#9eb8db" stroke-opacity=".3" filter="url(#shadow)"/>
+<rect x="44" y="36" width="872" height="70" rx="20" fill="#16243a"/><path d="M44 86V56a20 20 0 0 1 20-20h832a20 20 0 0 1 20 20v50H44Z" fill="#192940"/>
+<text x="76" y="78" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="-1" fill="#f5f7ff">RESULTS<span fill="#83e1bf">.</span></text>
+<text x="223" y="76" font-family="Arial,sans-serif" font-size="12" fill="#b5c4dc">Academic workspace</text>
+<text x="367" y="76" font-family="Arial,sans-serif" font-size="12" fill="#788aa6">Students</text><text x="432" y="76" font-family="Arial,sans-serif" font-size="12" fill="#788aa6">Marks</text><text x="482" y="76" font-family="Arial,sans-serif" font-size="12" fill="#788aa6">Results</text>
+<rect x="762" y="54" width="122" height="34" rx="8" fill="#83e1bf"/><text x="823" y="75" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#10283a">Review results</text>
+<text x="76" y="145" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#83e1bf">SEMESTER RESULTS</text>
+<text x="76" y="184" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#f5f7ff">Results overview</text>
+<text x="76" y="209" font-family="Arial,sans-serif" font-size="12" fill="#9fb0c9">BBA · Semester 1 · Preview data</text>
+<rect x="747" y="151" width="137" height="37" rx="8" fill="#18352f" stroke="#5cbaa0" stroke-opacity=".5"/><circle cx="764" cy="169" r="4" fill="#83e1bf"/><text x="776" y="173" font-family="Arial,sans-serif" font-size="10" fill="#b7f2df">Sample data</text>
+<g filter="url(#shadow)">
+ <rect x="76" y="240" width="193" height="104" rx="11" fill="url(#card)" stroke="#9eb8db" stroke-opacity=".21"/>
+ <rect x="283" y="240" width="193" height="104" rx="11" fill="url(#card)" stroke="#9eb8db" stroke-opacity=".21"/>
+ <rect x="490" y="240" width="193" height="104" rx="11" fill="url(#card)" stroke="#9eb8db" stroke-opacity=".21"/>
+ <rect x="697" y="240" width="187" height="104" rx="11" fill="url(#card)" stroke="#9eb8db" stroke-opacity=".21"/>
+</g>
+<g font-family="Arial,sans-serif"><text x="94" y="267" font-size="10" fill="#9fb0c9">Student records</text><text x="94" y="307" font-size="27" font-weight="700" fill="#f6f7ff">Ready</text><text x="94" y="327" font-size="9" fill="#83e1bf">Input validation</text>
+<text x="301" y="267" font-size="10" fill="#9fb0c9">Marks</text><text x="301" y="307" font-size="27" font-weight="700" fill="#f6f7ff">Reviewed</text><text x="301" y="327" font-size="9" fill="#83e1bf">Data checks</text>
+<text x="508" y="267" font-size="10" fill="#9fb0c9">SGPA / CGPA</text><text x="508" y="307" font-size="27" font-weight="700" fill="#f6f7ff">Computed</text><text x="508" y="327" font-size="9" fill="#83e1bf">Grade calculations</text>
+<text x="715" y="267" font-size="10" fill="#9fb0c9">Publication</text><text x="715" y="307" font-size="24" font-weight="700" fill="#f6f7ff">Preview</text><text x="715" y="327" font-size="9" fill="#83e1bf">Approval workflow</text></g>
+<rect x="76" y="365" width="808" height="217" rx="11" fill="#101b2d" stroke="#8ea9cd" stroke-opacity=".28"/>
+<text x="98" y="393" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#eef2ff">Student result preview</text><text x="98" y="413" font-family="Arial,sans-serif" font-size="9" fill="#8398b4">Illustrative layout · no real student data</text>
+<path d="M76 430h808" stroke="#8ea9cd" stroke-opacity=".25"/>
+<g font-family="Arial,sans-serif" font-size="10" fill="#8296b4"><text x="98" y="453">STUDENT</text><text x="397" y="453">PROGRAM</text><text x="559" y="453">SGPA</text><text x="659" y="453">STATUS</text><text x="789" y="453">ACTION</text></g>
+<g stroke="#8ea9cd" stroke-opacity=".13"><path d="M76 469h808M76 513h808M76 557h808"/></g>
+<g font-family="Arial,sans-serif">
+<circle cx="106" cy="490" r="12" fill="#6b91b2" fill-opacity=".35"/><text x="106" y="494" text-anchor="middle" font-size="9" fill="#cbe3f5">A</text><text x="128" y="487" font-size="11" font-weight="700" fill="#e5edfa">Student A</text><text x="128" y="501" font-size="8" fill="#8197b5">Sample record</text><text x="397" y="493" font-size="10" fill="#b3c3dc">BBA (ENT)</text><text x="559" y="493" font-size="11" font-weight="700" fill="#f5f7ff">—</text><rect x="659" y="481" width="70" height="19" rx="9" fill="#51452b"/><text x="694" y="494" text-anchor="middle" font-size="9" fill="#f0d6a0">Draft</text><text x="789" y="493" font-size="10" fill="#83e1bf">Review ↗</text>
+<circle cx="106" cy="535" r="12" fill="#7f74bb" fill-opacity=".4"/><text x="106" y="539" text-anchor="middle" font-size="9" fill="#ded9ff">B</text><text x="128" y="532" font-size="11" font-weight="700" fill="#e5edfa">Student B</text><text x="128" y="546" font-size="8" fill="#8197b5">Sample record</text><text x="397" y="537" font-size="10" fill="#b3c3dc">BBA (COM)</text><text x="559" y="537" font-size="11" font-weight="700" fill="#f5f7ff">—</text><rect x="659" y="525" width="70" height="19" rx="9" fill="#1d4b40"/><text x="694" y="538" text-anchor="middle" font-size="9" fill="#a8f0d4">Checked</text><text x="789" y="537" font-size="10" fill="#83e1bf">Review ↗</text>
+</g>
+<rect x="76" y="603" width="808" height="34" rx="8" fill="#14263b" stroke="#8ea9cd" stroke-opacity=".22"/><circle cx="94" cy="620" r="4" fill="#83e1bf"/><text x="107" y="624" font-family="Arial,sans-serif" font-size="10" fill="#9eb1cd">Sample interface only</text><text x="862" y="624" text-anchor="end" font-family="Arial,sans-serif" font-size="10" fill="#83e1bf">Review before publishing ↗</text>
+</svg>
