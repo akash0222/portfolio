@@ -139,10 +139,10 @@ function App() {
                 <span className="dash-menu">···</span>
               </div>
               <div className="dash-body">
-                <div className="dash-title">Everything in sync<span className="live-pill">LIVE</span></div>
+                <div className="dash-title">Everything in sync<span className="live-pill">UI CONCEPT</span></div>
                 <div className="dash-stats">
-                  <div><span>Schedules</span><strong>128</strong><small>↗ 12.8%</small></div>
-                  <div><span>Workflows</span><strong>24</strong><small>↗ 8.2%</small></div>
+                  <div><span>Programs</span><strong>Multi</strong><small>Program mapping</small></div>
+                  <div><span>Constraints</span><strong>Rules</strong><small>Rule checks</small></div>
                 </div>
                 <div className="chart-area">
                   <div className="chart-grid" />
@@ -157,7 +157,7 @@ function App() {
                     <path d="M0 96 C25 88 34 93 52 74 S87 88 111 58 S151 71 176 48 S214 64 240 35 S282 50 303 24 S337 35 360 8" fill="none" stroke="#a99bff" strokeWidth="3" strokeLinecap="round" />
                   </svg>
                 </div>
-                <div className="dash-footer"><span><i className="legend-purple" /> Performance</span><span>Last 30 days <b>⌄</b></span></div>
+                <div className="dash-footer"><span><i className="legend-purple" /> Performance</span><span>Illustrative visual <b>⌄</b></span></div>
               </div>
             </div>
             <div className="floating-chip chip-one"><span className="chip-icon">↗</span><div><strong>Built for impact</strong><small>Practical solutions</small></div></div>
@@ -245,10 +245,11 @@ function App() {
                 <div className="art-caption">A smarter way to plan academic schedules.</div>
               </div>
               <div className="project-content">
-                <div className="project-meta"><span>FULL-STACK WEB APP</span><span>2026</span></div>
+                <div className="project-meta"><span>FULL-STACK WEB APP</span><span>PROJECT 01</span></div>
                 <h3>Scheduly — Timetable Generator</h3>
                 <p>Academic scheduling with program/semester mapping, faculty and room constraints, holiday management, validation, publishing, and timetable portals.</p>
                 <div className="tag-list"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
+                <details className="project-details"><summary>Project highlights</summary><ul><li>Program and semester-aware timetable setup</li><li>Faculty, section, and room conflict constraints</li><li>Holiday-aware scheduling and timetable portals</li></ul></details>
                 <div className="project-links"><a href="https://time-table-beige-three.vercel.app" target="_blank" rel="noreferrer">Live product <span>↗</span></a></div>
               </div>
             </article>
@@ -256,15 +257,17 @@ function App() {
               <div className="project-art results-art">
                 <div className="results-window">
                   <div className="results-head"><span>RESULTS OVERVIEW</span><span>•••</span></div>
-                  <div className="result-number"><small>Semester performance</small><strong>8.42 <em>SGPA</em></strong><div className="result-bars"><i style={{ height: "45%" }} /><i style={{ height: "68%" }} /><i style={{ height: "55%" }} /><i style={{ height: "82%" }} /><i style={{ height: "72%" }} /><i style={{ height: "96%" }} /><i style={{ height: "77%" }} /><i style={{ height: "88%" }} /></div></div>
-                  <div className="result-row"><span>Published results</span><b>✓ Complete</b></div>
+                  <div className="result-number"><small>Illustrative result card</small><strong>SGPA <em>preview</em></strong><div className="result-bars"><i style={{ height: "45%" }} /><i style={{ height: "68%" }} /><i style={{ height: "55%" }} /><i style={{ height: "82%" }} /><i style={{ height: "72%" }} /><i style={{ height: "96%" }} /><i style={{ height: "77%" }} /><i style={{ height: "88%" }} /></div></div>
+                  <div className="result-row"><span>Workflow status</span><b>Demo state</b></div>
                 </div>
               </div>
               <div className="project-content">
-                <div className="project-meta"><span>EDTECH / ERP</span><span>01</span></div>
+                <div className="project-meta"><span>EDTECH / ERP</span><span>PROJECT 02</span></div>
                 <h3>Result Generator</h3>
                 <p>A result management workflow for student records, marks, SGPA/CGPA calculations, rank lists, Excel uploads, and result publishing.</p>
                 <div className="tag-list"><span>React</span><span>Express</span><span>MongoDB</span><span>REST API</span></div>
+                <details className="project-details"><summary>Project highlights</summary><ul><li>Student, faculty, and academic records</li><li>Marks imports with SGPA/CGPA calculation workflows</li><li>Rank lists and result publishing processes</li></ul></details>
+                <div className="project-links"><a href="mailto:abhsingh76@gmail.com?subject=Request%20a%20Result%20Generator%20walkthrough">Request a walkthrough <span>↗</span></a></div>
               </div>
             </article>
             <article className="project-card" data-category="website">
@@ -321,30 +324,33 @@ function App() {
                 </svg>
               </div>
               <div className="project-content">
-                <div className="project-meta"><span>AUTOMOTIVE / SERVICE WEBSITE</span><span>04</span></div>
+                <div className="project-meta"><span>AUTOMOTIVE / SERVICE WEBSITE</span><span>PROJECT 03</span></div>
                 <h3>The Detailing Shelter</h3>
                 <p>A customer-facing web experience for an automotive detailing brand, bringing its identity and services together.</p>
                 <div className="tag-list"><span>Automotive</span><span>Service website</span><span>Responsive UI</span></div>
+                <details className="project-details"><summary>Project highlights</summary><ul><li>Service-led presentation for an automotive brand</li><li>Brand-aligned visual design and page hierarchy</li><li>Responsive customer experience</li></ul></details>
                 <div className="project-links"><a href="https://thedetailingshelter.in/" target="_blank" rel="noreferrer">Live website <span>↗</span></a></div>
               </div>
             </article>
             <article className="project-card" data-category="website commerce">
               <div className="project-art store-art"><div className="store-top"><span>MY SPECS / STUDIO</span><span>⌕　♡</span></div><div className="glasses"><div className="lens" /><div className="bridge" /><div className="lens" /></div><div className="store-bottom"><span>Find your frame.</span><span className="round-arrow">↗</span></div></div>
               <div className="project-content">
-                <div className="project-meta"><span>COMMERCE CONCEPT</span><span>02</span></div>
+                <div className="project-meta"><span>COMMERCE CONCEPT</span><span>PROJECT 04</span></div>
                 <h3>My Specs Store</h3>
                 <p>An eyewear storefront concept focused on clear product discovery and a clean shopping experience.</p>
                 <div className="tag-list"><span>Web design</span><span>E-commerce</span><span>Responsive UI</span></div>
+                <details className="project-details"><summary>Project highlights</summary><ul><li>Eyewear catalogue and product discovery</li><li>Shopping cart and checkout journey</li><li>Storefront experience for online and cash-on-delivery orders</li></ul></details>
                 <div className="project-links"><a href="https://my-specs-store.vercel.app" target="_blank" rel="noreferrer">Live website <span>↗</span></a></div>
               </div>
             </article>
             <article className="project-card project-wide" data-category="website">
               <div className="project-art vastu-art"><div className="vastu-sun" /><div className="vastu-copy"><span>SPACE · BALANCE · WELLBEING</span><strong>Tatvam<br />Vastu</strong><i>Thoughtful spaces, intentional living.</i></div><div className="vastu-lines" /></div>
               <div className="project-content">
-                <div className="project-meta"><span>BRAND WEBSITE</span><span>03</span></div>
+                <div className="project-meta"><span>BRAND WEBSITE</span><span>PROJECT 05</span></div>
                 <h3>Tatvam Vastu</h3>
                 <p>A service-led website concept with a calm visual language, clear sections, and a focus on communicating trust.</p>
                 <div className="tag-list"><span>UI / UX</span><span>CSS</span><span>Responsive design</span></div>
+                <details className="project-details"><summary>Project highlights</summary><ul><li>Clear service information and page hierarchy</li><li>Calm visual language for a trust-led brand</li><li>Responsive service website structure</li></ul></details>
                 <div className="project-links"><a href="https://tatvamvastu.com/" target="_blank" rel="noreferrer">Live website <span>↗</span></a></div>
               </div>
             </article>
@@ -378,12 +384,20 @@ function App() {
         </section>
         </>}
 
+        {currentPage === "home" && <section className="section container collaboration-section" aria-labelledby="collaboration-title">
+          <div className="section-heading"><div><p className="section-kicker">WAYS TO WORK TOGETHER / 04</p><h2 id="collaboration-title">Two ways to create<br /><span className="muted-heading">useful impact.</span></h2></div><p className="section-intro">I’m open to both full-time opportunities and focused, project-based collaborations.</p></div>
+          <div className="collaboration-grid">
+            <article className="collaboration-card"><span className="collaboration-number">01 / CAREER</span><h3>Join a team</h3><p>Bring structured implementation, stakeholder coordination, SaaS workflows, and a product-minded approach to delivery.</p><a href="mailto:abhsingh76@gmail.com?subject=Career%20opportunity">Discuss a role <span>↗</span></a></article>
+            <article className="collaboration-card"><span className="collaboration-number">02 / FREELANCE</span><h3>Build a useful solution</h3><p>Collaborate on responsive websites, practical web apps, and clearer workflows for a real business need.</p><a href="mailto:abhsingh76@gmail.com?subject=Freelance%20project">Discuss a project <span>↗</span></a></article>
+          </div>
+        </section>}
+
         {(currentPage === "contact" || currentPage === "home") && <section className="contact-section" id="contact">
           <div className="container contact-inner">
             <p className="section-kicker">CAREER OPPORTUNITIES &amp; FREELANCE / 04</p>
             {currentPage === "contact" ? <h1 className="section-title">Let’s make something<br /><span className="gradient-text">that matters.</span></h1> : <h2>Let’s make something<br /><span className="gradient-text">that matters.</span></h2>}
             <p>I’m open to career opportunities and freelance collaborations in SaaS implementation, web products, and workflow improvement.</p>
-            <div className="contact-actions"><a className="button button-primary" href="mailto:abhsingh76@gmail.com?subject=Let's%20connect">Email me <span>↗</span></a><a className="button button-whatsapp" href="https://wa.me/919956191939" target="_blank" rel="noreferrer">WhatsApp me <span>↗</span></a><a className="button button-outline" href="https://github.com/akash0222" target="_blank" rel="noreferrer">GitHub profile <span>↗</span></a></div>
+            <div className="contact-actions"><a className="button button-primary" href="mailto:abhsingh76@gmail.com?subject=Let's%20connect">Email me <span>↗</span></a><a className="button button-whatsapp" href="https://wa.me/919956191939" target="_blank" rel="noreferrer">WhatsApp me <span>↗</span></a></div>
           </div>
         </section>}
       </main>
