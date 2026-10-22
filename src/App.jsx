@@ -16,6 +16,16 @@ function App() {
       : pathname.endsWith("/contact.html")
         ? "contact"
         : "home";
+  const serviceOptions = [
+    "SaaS & workflow support",
+    "Web app or internal tool",
+    "Business website",
+    "E-commerce storefront",
+    "Data & process improvement",
+    "Other / not sure yet",
+  ];
+  const requestedService = new URLSearchParams(window.location.search).get("service") || "";
+  const selectedService = serviceOptions.includes(requestedService) ? requestedService : "";
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -421,8 +431,8 @@ function App() {
           </div>
           <div className="services-grid">
             <article className="service-card"><span className="service-index">01 / IMPLEMENTATION</span><div className="service-icon" aria-hidden="true">↗</div><h3>SaaS &amp; workflow support</h3><p>Map requirements, clarify user journeys, support configuration and onboarding, and make operational handoffs easier to follow.</p><a href="/contact.html?service=SaaS%20%26%20workflow%20support">Discuss this service <span>↗</span></a></article>
-            <article className="service-card"><span className="service-index">02 / WEB APPS</span><div className="service-icon" aria-hidden="true">{ "{ }" }</div><h3>Web apps &amp; internal tools</h3><p>Plan and build practical dashboards, data-entry flows, portals, and reporting tools around a defined business process.</p><a href="/contact.html?service=Web%20apps%20%26%20internal%20tools">Discuss this service <span>↗</span></a></article>
-            <article className="service-card"><span className="service-index">03 / WEB PRESENCE</span><div className="service-icon" aria-hidden="true">✳</div><h3>Business websites &amp; stores</h3><p>Create responsive, brand-aligned websites and storefront experiences with clear navigation and customer journeys.</p><a href="/contact.html?service=Business%20website%20or%20store">Discuss this service <span>↗</span></a></article>
+            <article className="service-card"><span className="service-index">02 / WEB APPS</span><div className="service-icon" aria-hidden="true">{ "{ }" }</div><h3>Web apps &amp; internal tools</h3><p>Plan and build practical dashboards, data-entry flows, portals, and reporting tools around a defined business process.</p><a href="/contact.html?service=Web%20app%20or%20internal%20tool">Discuss this service <span>↗</span></a></article>
+            <article className="service-card"><span className="service-index">03 / WEB PRESENCE</span><div className="service-icon" aria-hidden="true">✳</div><h3>Business websites &amp; stores</h3><p>Create responsive, brand-aligned websites and storefront experiences with clear navigation and customer journeys.</p><a href="/contact.html?service=Business%20website">Discuss this service <span>↗</span></a></article>
             <article className="service-card"><span className="service-index">04 / DATA WORKFLOWS</span><div className="service-icon" aria-hidden="true">⌘</div><h3>Data &amp; process improvement</h3><p>Organize import, validation, and reporting steps to reduce avoidable manual work and make exceptions easier to spot.</p><a href="/contact.html?service=Data%20%26%20process%20improvement">Discuss this service <span>↗</span></a></article>
           </div>
         </section>}
@@ -449,7 +459,7 @@ function App() {
                 <div className="enquiry-field"><label htmlFor="enquiry-email">Email address</label><input id="enquiry-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" maxLength={160} required /></div>
               </div>
               <div className="enquiry-fields enquiry-fields-two">
-                <div className="enquiry-field"><label htmlFor="enquiry-service">What do you need?</label><select id="enquiry-service" name="service" defaultValue="" required><option value="" disabled>Select a service</option><option>SaaS &amp; workflow support</option><option>Web app or internal tool</option><option>Business website</option><option>E-commerce storefront</option><option>Data &amp; process improvement</option><option>Other / not sure yet</option></select></div>
+                <div className="enquiry-field"><label htmlFor="enquiry-service">What do you need?</label><select id="enquiry-service" name="service" defaultValue={selectedService} required><option value="" disabled>Select a service</option><option>SaaS &amp; workflow support</option><option>Web app or internal tool</option><option>Business website</option><option>E-commerce storefront</option><option>Data &amp; process improvement</option><option>Other / not sure yet</option></select></div>
                 <div className="enquiry-field"><label htmlFor="enquiry-budget">Estimated budget (optional)</label><select id="enquiry-budget" name="budget" defaultValue=""><option value="">Not decided yet</option><option>Under ₹25,000</option><option>₹25,000–₹75,000</option><option>₹75,000+</option><option>Need help estimating</option></select></div>
               </div>
               <div className="enquiry-field"><label htmlFor="enquiry-message">Project brief</label><textarea id="enquiry-message" name="message" placeholder="What are you trying to improve or build? Include any key requirements or target date." rows={5} maxLength={1500} required /></div>
