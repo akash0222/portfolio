@@ -1174,3 +1174,8 @@ body{
 .enquiry-status-success{color:var(--green)}
 .enquiry-status-error,.enquiry-fallback{color:#ffb4bc!important}
 .enquiry-fallback a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+
+/* Keep in-page navigation targets clear of the sticky header. */
+:where(main, main [id]) {
+  scroll-margin-top: clamp(76px, 8vh, 92px);
+}
