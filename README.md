@@ -15,7 +15,7 @@ A responsive, multi-page React portfolio for Akash Singh, built with Vite to pre
 3. Create a production build with `npm run build`.
 4. Preview the production build with `npm run preview`.
 
-The site has four pages: `/` (Home), `/work.html` (Work), `/about.html` (About), and `/contact.html` (Contact). Vite builds each page as a separate HTML entry.
+The site has six standalone pages: `/` (Home), `/work.html` (Work), `/about.html` (About), `/skills.html` (Skills), `/services.html` (Services), and `/contact.html` (Contact). Each route has its own HTML entry and page-specific metadata; shared navigation, theme, and enquiry behavior live in the React app.
 
 ## Deploy to Vercel
 Import the repository in Vercel and use the Vite defaults: `npm run build` as the build command and `dist` as the output directory.
