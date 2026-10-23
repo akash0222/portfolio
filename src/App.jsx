@@ -5,9 +5,13 @@ function App() {
   const [activeWorkFilter, setActiveWorkFilter] = useState("all");
   const [enquiryState, setEnquiryState] = useState("idle");
   const [enquiryStatus, setEnquiryStatus] = useState("");
-  const [theme, setTheme] = useState(() => (
-    window.localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark"
-  ));
+  const [theme, setTheme] = useState(() => {
+    try {
+      return window.localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
+    } catch {
+      return "dark";
+    }
+  });
   const menuToggleRef = useRef(null);
   const currentYear = new Date().getFullYear();
   const pathname = window.location.pathname;
@@ -31,7 +35,11 @@ function App() {
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    window.localStorage.setItem("portfolio-theme", theme);
+    try {
+      window.localStorage.setItem("portfolio-theme", theme);
+    } catch {
+      // Keep theme switching functional when browser storage is unavailable.
+    }
   }, [theme]);
 
   useEffect(() => {
