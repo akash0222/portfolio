@@ -79,11 +79,21 @@ function App() {
     setEnquiryStatus("Sending your enquiry…");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => controller.abort(), 15000);
+      let response;
+
+      try {
+        response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+          signal: controller.signal,
+        });
+      } finally {
+        window.clearTimeout(timeoutId);
+      }
+
       const result = await response.json().catch(() => ({}));
 
       if (!response.ok || !result.ok) {
@@ -95,9 +105,13 @@ function App() {
       setEnquiryStatus("Thanks — your enquiry has been sent successfully. Akash will reply by email.");
     } catch (error) {
       setEnquiryState("error");
-      setEnquiryStatus(error instanceof Error
-        ? error.message
-        : "Your enquiry could not be sent. Please email Akash directly.");
+      if (error instanceof Error && error.name === "AbortError") {
+        setEnquiryStatus("This is taking too long. Please try again or email Akash directly.");
+      } else {
+        setEnquiryStatus(error instanceof Error
+          ? error.message
+          : "Your enquiry could not be sent. Please email Akash directly.");
+      }
     }
   }
   function closeMenu() {
@@ -399,7 +413,17 @@ function App() {
           </div>
           {(currentPage === "contact" || currentPage === "home") && <div className="container enquiry-wrap" id="project-enquiry">
             <div className="enquiry-intro"><p className="section-kicker">FREELANCE PROJECT ENQUIRY</p><h2>Tell me a little<br /><span className="muted-heading">about the work.</span></h2><p>Share the basics so I can understand what you need and prepare for a useful first conversation.</p></div>
-            <form className="enquiry-form" onSubmit={handleEnquirySubmit} aria-describedby="enquiry-status">
+            <form
+              className="enquiry-form"
+              onSubmit={handleEnquirySubmit}
+              onChange={() => {
+                if (enquiryState === "success" || enquiryState === "error") {
+                  setEnquiryState("idle");
+                  setEnquiryStatus("");
+                }
+              }}
+              aria-describedby="enquiry-status"
+            >
               <div className="enquiry-fields enquiry-fields-two">
                 <div className="enquiry-field"><label htmlFor="enquiry-name">Your name</label><input id="enquiry-name" name="name" type="text" autoComplete="name" placeholder="Name" maxLength={100} required /></div>
                 <div className="enquiry-field"><label htmlFor="enquiry-email">Email address</label><input id="enquiry-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" maxLength={160} required /></div>
@@ -412,7 +436,7 @@ function App() {
               <div className="enquiry-honeypot" aria-hidden="true"><label htmlFor="enquiry-website">Leave this field empty</label><input id="enquiry-website" name="website" type="text" tabIndex={-1} autoComplete="off" /></div>
               <div className="enquiry-submit-row">
                 <button className="button button-primary" type="submit" disabled={enquiryState === "sending"}>{enquiryState === "sending" ? "Sending…" : "Send enquiry"} <span aria-hidden="true">{enquiryState === "sending" ? "…" : "↗"}</span></button>
-                <p id="enquiry-status" className={`enquiry-status enquiry-status-${enquiryState}`} role="status" aria-live="polite">{enquiryStatus || "Your enquiry will be sent directly to Akash by email."}</p>
+                <p id="enquiry-status" className={`enquiry-status enquiry-status-${enquiryState}`} role="status" aria-live="polite">{enquiryStatus || "Submit your details and you’ll see a confirmation here."}</p>
                 {enquiryState === "error" && <p className="enquiry-fallback">You can also email <a href="mailto:abhsingh76@gmail.com">abhsingh76@gmail.com</a>.</p>}
               </div>
             </form>
