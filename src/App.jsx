@@ -19,9 +19,13 @@ function App() {
     ? "work"
     : pathname.endsWith("/about.html")
       ? "about"
-      : pathname.endsWith("/contact.html")
-        ? "contact"
-        : "home";
+      : pathname.endsWith("/skills.html")
+        ? "skills"
+        : pathname.endsWith("/services.html")
+          ? "services"
+          : pathname.endsWith("/contact.html")
+            ? "contact"
+            : "home";
   const serviceOptions = [
     "SaaS & workflow support",
     "Web app or internal tool",
@@ -165,11 +169,11 @@ function App() {
           </button>
           <div className={`nav-links${menuOpen ? " open" : ""}`} id="navLinks">
             <a href="/" aria-current={currentPage === "home" ? "page" : undefined} onClick={closeMenu}>Home</a>
-            <a href={currentPage === "home" ? "#work" : "/work.html"} aria-current={currentPage === "work" ? "page" : undefined} onClick={closeMenu}>Work</a>
-            <a href={currentPage === "home" ? "#about" : "/about.html"} aria-current={currentPage === "about" ? "page" : undefined} onClick={closeMenu}>About</a>
-            <a href={currentPage === "home" ? "#skills" : "/about.html#skills"} onClick={closeMenu}>Skills</a>
-            <a href={currentPage === "home" ? "#services" : "/#services"} onClick={closeMenu}>Services</a>
-            <a href={currentPage === "home" ? "#project-enquiry" : "/contact.html#project-enquiry"} className="nav-cta" aria-current={currentPage === "contact" ? "page" : undefined} onClick={closeMenu}>Let's talk <span>↗</span></a>
+            <a href="/work.html" aria-current={currentPage === "work" ? "page" : undefined} onClick={closeMenu}>Work</a>
+            <a href="/about.html" aria-current={currentPage === "about" ? "page" : undefined} onClick={closeMenu}>About</a>
+            <a href="/skills.html" aria-current={currentPage === "skills" ? "page" : undefined} onClick={closeMenu}>Skills</a>
+            <a href="/services.html" aria-current={currentPage === "services" ? "page" : undefined} onClick={closeMenu}>Services</a>
+            <a href="/contact.html#project-enquiry" className="nav-cta" aria-current={currentPage === "contact" ? "page" : undefined} onClick={closeMenu}>Let's talk <span>↗</span></a>
             <button
               className="theme-toggle"
               type="button"
@@ -195,8 +199,8 @@ function App() {
             <p className="hero-sub">SAAS IMPLEMENTATION · PRODUCT BUILDING · WEB EXPERIENCES</p>
             <p className="hero-desc">I connect business needs with technology through SaaS implementation, workflow improvement, and practical digital products.</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#work">Explore selected work <span>↘</span></a>
-              <a className="button button-quiet" href="#contact">Discuss a role or project <span>↗</span></a>
+              <a className="button button-primary" href="/work.html">Explore selected work <span>↘</span></a>
+              <a className="button button-quiet" href="/contact.html">Discuss a role or project <span>↗</span></a>
               <a className="button button-quiet" href="/resume.pdf" download="Akash-Singh-Resume.pdf">Download résumé <span>↓</span></a>
             </div>
           </div>
@@ -238,7 +242,39 @@ function App() {
           </>
         )}
 
-        {(currentPage === "work" || currentPage === "home") && <section className="section container work-section" id="work">
+        {currentPage === "home" && (
+          <section className="home-featured container" aria-labelledby="featured-title">
+            <div className="home-featured-heading">
+              <div>
+                <p className="section-kicker">FEATURED WORK</p>
+                <h2 id="featured-title">Built around<br /><span className="muted-heading">real workflows.</span></h2>
+              </div>
+              <a className="text-link" href="/work.html">View all projects <span>↗</span></a>
+            </div>
+            <div className="home-featured-grid">
+              <a className="home-featured-card" href="/work.html">
+                <img src="/assets/scheduly-preview.svg" alt="" loading="lazy" decoding="async" width="960" height="700" />
+                <span className="home-featured-type">ACADEMIC SCHEDULING</span>
+                <strong>Scheduly</strong>
+                <span className="home-featured-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a className="home-featured-card" href="/work.html">
+                <img src="/assets/result-generator-preview.svg" alt="" loading="lazy" decoding="async" width="960" height="700" />
+                <span className="home-featured-type">EDTECH / ERP</span>
+                <strong>Result Generator</strong>
+                <span className="home-featured-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a className="home-featured-card home-featured-text-card" href="/work.html">
+                <span className="home-featured-type">WEB EXPERIENCES</span>
+                <strong>Websites &amp; commerce</strong>
+                <span>Brand-led websites and storefront experiences designed around clear customer journeys.</span>
+                <span className="home-featured-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </section>
+        )}
+
+        {currentPage === "work" && <section className="section container work-section" id="work">
           <div className="section-heading">
             <div><p className="section-kicker">SELECTED WORK</p>{currentPage === "work" ? <h1 className="section-title">Work that solves<br /><span className="muted-heading">real problems.</span></h1> : <h2>Work that solves<br /><span className="muted-heading">real problems.</span></h2>}</div>
             <p className="section-intro">Projects across academic scheduling, education workflows, commerce, and automotive care.</p>
@@ -364,7 +400,7 @@ function App() {
           </div>
         </section>}
 
-        {(currentPage === "about" || currentPage === "home") && <>
+        {currentPage === "about" && (
         <section className="about-section" id="about">
           <div className="container about-grid">
             <div><p className="section-kicker">ABOUT ME</p>{currentPage === "about" ? <h1 className="section-title">Business context.<br /><span className="gradient-text">Builder mindset.</span></h1> : <h2>Business context.<br /><span className="gradient-text">Builder mindset.</span></h2>}</div>
@@ -377,10 +413,12 @@ function App() {
             </div>
           </div>
         </section>
+        )}
 
+        {currentPage === "skills" && (
         <section className="section container" id="skills">
           <div className="section-heading">
-            <div><p className="section-kicker">WHAT I BRING</p><h2>Skills built around<br /><span className="muted-heading">getting things done.</span></h2></div>
+            <div><p className="section-kicker">WHAT I BRING</p><h1 className="section-title">Skills built around<br /><span className="muted-heading">getting things done.</span></h1></div>
             <p className="section-intro">A practical blend of implementation, product coordination, and hands-on development.</p>
           </div>
           <div className="skills-grid">
@@ -390,11 +428,11 @@ function App() {
             <div className="skill-card"><div className="skill-icon">✳</div><h3>Product thinking</h3><p>Usability, iterative improvement, clear navigation, practical features, and reliable delivery.</p><div className="skill-line"><span>04</span><span>USEFUL OVER UNNECESSARY</span></div></div>
           </div>
         </section>
-        </>}
+        )}
 
-        {currentPage === "home" && <section className="section container services-section" id="services" aria-labelledby="services-title">
+        {currentPage === "services" && <section className="section container services-section" id="services" aria-labelledby="services-title">
           <div className="section-heading">
-            <div><p className="section-kicker">HOW I CAN HELP</p><h2 id="services-title">Good work starts<br /><span className="muted-heading">with a clear need.</span></h2></div>
+            <div><p className="section-kicker">HOW I CAN HELP</p><h1 className="section-title" id="services-title">Good work starts<br /><span className="muted-heading">with a clear need.</span></h1></div>
             <p className="section-intro">Focused support for teams and businesses that need clearer workflows, a useful web experience, or a practical digital tool.</p>
           </div>
           <div className="services-grid">
@@ -404,7 +442,7 @@ function App() {
             <article className="service-card"><span className="service-index">DATA WORKFLOWS</span><div className="service-icon" aria-hidden="true">⌘</div><h3>Data &amp; process improvement</h3><p>Organize import, validation, and reporting steps to reduce avoidable manual work and make exceptions easier to spot.</p><a href="/contact.html?service=Data%20%26%20process%20improvement#project-enquiry">Discuss this service <span>↗</span></a></article>
           </div>
         </section>}
-        {currentPage === "home" && <section className="section container collaboration-section" aria-labelledby="collaboration-title">
+        {currentPage === "services" && <section className="section container collaboration-section" aria-labelledby="collaboration-title">
           <div className="section-heading"><div><p className="section-kicker">CAREER & FREELANCE</p><h2 id="collaboration-title">Two ways to create<br /><span className="muted-heading">useful impact.</span></h2></div><p className="section-intro">I’m open to both full-time opportunities and focused, project-based collaborations.</p></div>
           <div className="collaboration-grid">
             <article className="collaboration-card"><span className="collaboration-number">CAREER</span><h3>Join a team</h3><p>Bring structured implementation, stakeholder coordination, SaaS workflows, and a product-minded approach to delivery.</p><a href="mailto:abhsingh76@gmail.com?subject=Career%20opportunity">Discuss a role <span>↗</span></a></article>
@@ -412,7 +450,7 @@ function App() {
           </div>
         </section>}
 
-        {(currentPage === "contact" || currentPage === "home") && <section className="contact-section" id="contact">
+        {currentPage === "contact" && <section className="contact-section" id="contact">
           <div className="container contact-inner">
             <p className="section-kicker">CAREER &amp; FREELANCE</p>
             {currentPage === "contact" ? <h1 className="section-title">Let’s make something<br /><span className="gradient-text">that matters.</span></h1> : <h2>Let’s make something<br /><span className="gradient-text">that matters.</span></h2>}
