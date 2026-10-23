@@ -12,7 +12,6 @@ const requiredFiles = [
   "assets/scheduly-preview.svg",
   "assets/result-generator-preview.svg",
   "resume.pdf",
-  "og-cover.png",
   "robots.txt",
   "sitemap.xml",
 ];
