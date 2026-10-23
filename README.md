@@ -8,6 +8,7 @@ A responsive, six-page React portfolio for Akash Singh, built with Vite to prese
 - `src/main.jsx` — React entry point
 - `styles.css` — shared responsive visual design system
 - `public/assets/` — local Scheduly and Result Generator showcase mockups
+- Open Graph and Twitter share images use a cropped, externally hosted JPG URL
 - `public/resume.pdf` — résumé download
 - `api/contact.js` — server-side enquiry validation and Resend email delivery
 - `public/robots.txt` and `public/sitemap.xml` — crawler directives and all six page URLs
