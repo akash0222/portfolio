@@ -10,6 +10,8 @@ export default defineConfig({
         home: fileURLToPath(new URL("./index.html", import.meta.url)),
         work: fileURLToPath(new URL("./work.html", import.meta.url)),
         about: fileURLToPath(new URL("./about.html", import.meta.url)),
+        skills: fileURLToPath(new URL("./skills.html", import.meta.url)),
+        services: fileURLToPath(new URL("./services.html", import.meta.url)),
         contact: fileURLToPath(new URL("./contact.html", import.meta.url)),
       },
     },
