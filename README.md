@@ -1,40 +1,40 @@
 # AKASH / WORKS — Portfolio
 
-A responsive, multi-page React portfolio for Akash Singh, built with Vite to present career experience and freelance-ready projects.
+A responsive, six-page React portfolio for Akash Singh, built with Vite to present career experience and freelance-ready projects.
 
 ## Files
-- `index.html` — document metadata and Vite mount point
-- `work.html`, `about.html`, `contact.html` — standalone pages for selected work, background, and contact
-- `src/App.jsx` — shared navigation and page-specific portfolio content
+- `index.html`, `work.html`, `about.html`, `skills.html`, `services.html`, `contact.html` — standalone page entry points with page-specific metadata
+- `src/App.jsx` — shared navigation, page routing, project filters, theme, and enquiry form
 - `src/main.jsx` — React entry point
-- `styles.css` — responsive visual design and animation
+- `styles.css` — shared responsive visual design system
+- `public/assets/` — local Scheduly and Result Generator showcase mockups
+- `public/resume.pdf` — résumé download
+- `api/contact.js` — server-side enquiry validation and Resend email delivery
+- `public/robots.txt` and `public/sitemap.xml` — crawler directives and all six page URLs
+- `.github/workflows/ci.yml` — automatic build verification on pushes and pull requests
 
 ## Development
 1. Install dependencies with `npm install`.
-2. Start the Vite development server with `npm run dev`.
-3. Create a production build with `npm run build`.
+2. Start development with `npm run dev`.
+3. Run a production build and validate expected output with `npm run check`.
 4. Preview the production build with `npm run preview`.
 
-The site has six standalone pages: `/` (Home), `/work.html` (Work), `/about.html` (About), `/skills.html` (Skills), `/services.html` (Services), and `/contact.html` (Contact). Each route has its own HTML entry and page-specific metadata; shared navigation, theme, and enquiry behavior live in the React app.
+The site has six standalone pages: `/` (Home), `/work.html` (Work), `/about.html` (About), `/skills.html` (Skills), `/services.html` (Services), and `/contact.html` (Contact).
 
 ## Deploy to Vercel
-Import the repository in Vercel and use the Vite defaults: `npm run build` as the build command and `dist` as the output directory.
+Use `npm run build` as the build command and `dist` as the output directory. GitHub Actions runs `npm run check` for pushes and pull requests to `main`.
 
 ## Contact form delivery
-
 The enquiry form submits to `/api/contact` and sends the enquiry to `CONTACT_TO_EMAIL` using Resend.
 
-Configure these Vercel Project Settings → Environment Variables for Production (and Preview if you test previews):
-- `RESEND_API_KEY`: a private Resend API key with permission to send mail.
-- `RESEND_FROM_EMAIL`: a sender address on a domain verified in Resend, for example `AKASH / WORKS <enquiries@yourdomain.com>`.
-- `CONTACT_TO_EMAIL`: destination inbox (defaults to `abhsingh76@gmail.com`).
+Configure these Vercel environment variables for Production (and Preview if testing previews):
+- `RESEND_API_KEY`: a private Resend API key with permission to send email.
+- `RESEND_FROM_EMAIL`: a sender address on a domain verified in Resend, e.g. `AKASH / WORKS <enquiries@your-verified-domain.com>`.
+- `CONTACT_TO_EMAIL`: destination inbox; currently defaults to `abhsingh76@gmail.com`.
 
-Then redeploy the project. The API key must stay in Vercel environment variables and must never be placed in client-side code or committed to GitHub. If email configuration is missing or delivery fails, the form will display an error and offer a direct email fallback.
-
-The endpoint validates all fields, limits request size through field length checks, ignores honeypot spam submissions, and applies a best-effort in-memory rate limit per warm function instance. For sustained public traffic, use a shared rate-limit store or edge/WAF rule.
+Never put the Resend API key in client-side code or commit it to GitHub. If configuration is missing or delivery fails, the form displays an error and offers a direct email fallback. The endpoint's in-memory rate limit is best-effort per warm serverless instance; sustained public traffic should use a shared rate-limit store or edge/WAF rule.
 
 ## Before publishing
-- Confirm the public contact email (`abhsingh76@gmail.com`) is correct.
-- Confirm the project descriptions and external links are still current.
-- The brand `AKASH / WORKS` is a proposed custom brand and can be renamed in `src/App.jsx` and `index.html`.
+- Confirm that the public contact email is correct.
+- Confirm each project description and live link is current.
 - The site intentionally does not claim an unverified number of years of experience.
