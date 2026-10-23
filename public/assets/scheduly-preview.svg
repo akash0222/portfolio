@@ -14,7 +14,7 @@
 <rect x="44" y="36" width="872" height="628" rx="20" fill="url(#screen)" stroke="#a6b1da" stroke-opacity=".3" filter="url(#shadow)"/>
 <rect x="44" y="36" width="872" height="70" rx="20" fill="#171f36"/>
 <path d="M44 86V56a20 20 0 0 1 20-20h832a20 20 0 0 1 20 20v50H44Z" fill="#1a223b"/>
-<text x="76" y="79" fill="#f5f4ff" font-family="Arial,sans-serif" font-size="29" font-weight="700" letter-spacing="-1.5">scheduly<span fill="#9f93ff">.</span></text>
+<text x="76" y="79" fill="#f5f4ff" font-family="Arial,sans-serif" font-size="29" font-weight="700" letter-spacing="-1.5">scheduly<tspan fill="#9f93ff">.</tspan></text>
 <rect x="265" y="59" width="25" height="25" rx="7" fill="#a99bff" fill-opacity=".16" stroke="#b9a8ff" stroke-opacity=".4"/>
 <path d="M272 67h11M272 72h11M272 77h7" stroke="#c5bbff" stroke-width="1.5" stroke-linecap="round"/>
 <text x="306" y="76" font-family="Arial,sans-serif" font-size="12" fill="#aab5ce">Timetables</text>
