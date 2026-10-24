@@ -99,6 +99,16 @@ try {
     assert.equal(res.statusCode, 413);
   });
 
+  await test("rejects oversized parsed bodies even if content length is understated", async () => {
+    const res = makeResponse();
+    await handler(makeRequest({
+      body: { ...validBody, message: "x".repeat(13000) },
+      contentLength: 200,
+      ip: "203.0.113.26",
+    }), res);
+    assert.equal(res.statusCode, 413);
+  });
+
   await test("accepts honeypot submissions without sending mail", async () => {
     const before = fetchCalls.length;
     const res = makeResponse();
