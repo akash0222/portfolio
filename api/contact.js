@@ -23,8 +23,8 @@ const ALLOWED_BUDGETS = new Set([
   "Need help estimating",
 ]);
 
-function clean(value, maxLength) {
-  return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
+function clean(value) {
+  return typeof value === "string" ? value.trim() : "";
 }
 
 function sendJson(res, status, payload) {
@@ -74,12 +74,17 @@ export default async function handler(req, res) {
     return sendJson(res, 415, { ok: false, error: "Send the enquiry as JSON." });
   }
 
+  const contentLength = Number(req.headers["content-length"] || 0);
+  if (Number.isFinite(contentLength) && contentLength > 12_000) {
+    return sendJson(res, 413, { ok: false, error: "Your enquiry is too large. Please shorten the project brief." });
+  }
+
   const body = req.body && typeof req.body === "object" && !Array.isArray(req.body)
     ? req.body
     : {};
 
   // Silently accept bot submissions that fill the visually-hidden honeypot.
-  if (clean(body.website, 200)) {
+  if (clean(body.website)) {
     return sendJson(res, 200, { ok: true });
   }
 
@@ -95,14 +100,17 @@ export default async function handler(req, res) {
     });
   }
 
-  const name = clean(body.name, 100);
-  const email = clean(body.email, 254);
-  const service = clean(body.service, 80);
-  const budget = clean(body.budget, 80);
-  const message = clean(body.message, 1500);
+  const name = clean(body.name);
+  const email = clean(body.email);
+  const service = clean(body.service);
+  const budget = clean(body.budget);
+  const message = clean(body.message);
 
-  if (name.length < 2 || !isValidEmail(email) || !ALLOWED_SERVICES.has(service)
-      || !ALLOWED_BUDGETS.has(budget) || message.length < 10) {
+  if (name.length < 2 || name.length > 100
+      || !isValidEmail(email) || email.length > 254
+      || !ALLOWED_SERVICES.has(service) || service.length > 80
+      || !ALLOWED_BUDGETS.has(budget) || budget.length > 80
+      || message.length < 10 || message.length > 1500) {
     return sendJson(res, 400, {
       ok: false,
       error: "Please check your name, email, service, and project brief.",
@@ -141,6 +149,7 @@ export default async function handler(req, res) {
         Authorization: "Bearer " + apiKey,
         "Content-Type": "application/json",
       },
+      signal: AbortSignal.timeout(10_000),
       body: JSON.stringify({
         from,
         to: [CONTACT_EMAIL],
@@ -161,10 +170,13 @@ export default async function handler(req, res) {
 
     return sendJson(res, 200, { ok: true, message: "Enquiry sent." });
   } catch (error) {
+    const timedOut = error instanceof Error && error.name === "TimeoutError";
     console.error("Contact enquiry delivery failed:", error instanceof Error ? error.message : "Unknown error");
     return sendJson(res, 502, {
       ok: false,
-      error: "The email service is temporarily unavailable. Please email Akash directly.",
+      error: timedOut
+        ? "The email service took too long to respond. Please try again or email Akash directly."
+        : "The email service is temporarily unavailable. Please email Akash directly.",
     });
   }
 }
