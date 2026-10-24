@@ -12,13 +12,15 @@ A responsive, six-page React portfolio for Akash Singh, built with Vite to prese
 - `public/resume.pdf` — résumé download
 - `api/contact.js` — server-side enquiry validation and Resend email delivery
 - `public/robots.txt` and `public/sitemap.xml` — crawler directives and all six page URLs
-- `.github/workflows/ci.yml` — automatic build verification on pushes and pull requests
+- `scripts/test-contact-api.mjs` — server endpoint regression tests
+- `.github/workflows/ci.yml` — automatic build and enquiry API verification on pushes and pull requests
 
 ## Development
 1. Install dependencies with `npm install`.
 2. Start development with `npm run dev`.
-3. Run a production build and validate expected output with `npm run check`.
-4. Preview the production build with `npm run preview`.
+3. Run a production build, validate page output, and run nine contact API tests with `npm run check`.
+4. Run only the API tests with `npm run test:api`.
+5. Preview the production build with `npm run preview`.
 
 The site has six standalone pages: `/` (Home), `/work.html` (Work), `/about.html` (About), `/skills.html` (Skills), `/services.html` (Services), and `/contact.html` (Contact).
 
