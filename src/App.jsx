@@ -472,7 +472,7 @@ function App() {
             >
               <div className="enquiry-fields enquiry-fields-two">
                 <div className="enquiry-field"><label htmlFor="enquiry-name">Your name</label><input id="enquiry-name" name="name" type="text" autoComplete="name" placeholder="Name" maxLength={100} required /></div>
-                <div className="enquiry-field"><label htmlFor="enquiry-email">Email address</label><input id="enquiry-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" maxLength={160} required /></div>
+                <div className="enquiry-field"><label htmlFor="enquiry-email">Email address</label><input id="enquiry-email" name="email" type="email" autoComplete="email" placeholder="you@company.com" maxLength={254} required /></div>
               </div>
               <div className="enquiry-fields enquiry-fields-two">
                 <div className="enquiry-field"><label htmlFor="enquiry-service">What do you need?</label><select id="enquiry-service" name="service" defaultValue={selectedService} required><option value="" disabled>Select a service</option><option>SaaS &amp; workflow support</option><option>Web app or internal tool</option><option>Business website</option><option>E-commerce storefront</option><option>Data &amp; process improvement</option><option>Other / not sure yet</option></select></div>
