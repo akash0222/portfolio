@@ -1,5 +1,4 @@
 import assert from "node:assert/strict";
-import handler from "../api/contact.js";
 
 const originalFetch = globalThis.fetch;
 const originalApiKey = process.env.RESEND_API_KEY;
@@ -9,6 +8,8 @@ const originalTo = process.env.CONTACT_TO_EMAIL;
 process.env.RESEND_API_KEY = "test_resend_key";
 process.env.RESEND_FROM_EMAIL = "Portfolio Test <onboarding@resend.dev>";
 process.env.CONTACT_TO_EMAIL = "portfolio-test@example.com";
+
+const { default: handler } = await import("../api/contact.js");
 
 let fetchMode = "success";
 let fetchCalls = [];
