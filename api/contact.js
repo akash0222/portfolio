@@ -2,6 +2,8 @@ const CONTACT_EMAIL = process.env.CONTACT_TO_EMAIL || "abhsingh76@gmail.com";
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX = 5;
+const MAX_RATE_LIMIT_BUCKETS = 500;
+const MAX_REQUEST_BYTES = 12_000;
 
 // Best-effort per-instance protection. The hidden form field is an additional spam trap.
 const rateLimitBuckets = new Map();
@@ -51,12 +53,18 @@ function isRateLimited(key) {
   recent.push(now);
   rateLimitBuckets.set(key, recent);
 
-  // Keep the in-memory map small on warm serverless instances.
-  if (rateLimitBuckets.size > 500) {
+  // Prune expired buckets first, then cap memory if many unique IPs hit this instance.
+  if (rateLimitBuckets.size > MAX_RATE_LIMIT_BUCKETS) {
     for (const [bucketKey, timestamps] of rateLimitBuckets.entries()) {
       if (!timestamps.some((timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS)) {
         rateLimitBuckets.delete(bucketKey);
       }
+    }
+
+    while (rateLimitBuckets.size > MAX_RATE_LIMIT_BUCKETS) {
+      const oldestKey = rateLimitBuckets.keys().next().value;
+      if (oldestKey === undefined) break;
+      rateLimitBuckets.delete(oldestKey);
     }
   }
 
@@ -75,13 +83,16 @@ export default async function handler(req, res) {
   }
 
   const contentLength = Number(req.headers["content-length"] || 0);
-  if (Number.isFinite(contentLength) && contentLength > 12_000) {
-    return sendJson(res, 413, { ok: false, error: "Your enquiry is too large. Please shorten the project brief." });
-  }
-
   const body = req.body && typeof req.body === "object" && !Array.isArray(req.body)
     ? req.body
     : {};
+  const serializedBody = JSON.stringify(body);
+  const actualBodyLength = Buffer.byteLength(serializedBody);
+
+  if ((Number.isFinite(contentLength) && contentLength > MAX_REQUEST_BYTES)
+      || actualBodyLength > MAX_REQUEST_BYTES) {
+    return sendJson(res, 413, { ok: false, error: "Your enquiry is too large. Please shorten the project brief." });
+  }
 
   // Silently accept bot submissions that fill the visually-hidden honeypot.
   if (clean(body.website)) {
