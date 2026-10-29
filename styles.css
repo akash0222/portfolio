@@ -1707,6 +1707,7 @@ h2,.section-title{
     gap: 16px;
   }
   .hero-visual {
+    height: 285px;
     min-height: 285px;
     margin: 0;
   }
@@ -1727,7 +1728,7 @@ h2,.section-title{
   }
   .dashboard-card {
     width: min(340px, 90%);
-    transform: rotate(-1deg) scale(.96);
+    transform: rotate(-1deg) scale(.88);
     transform-origin: center;
   }
   .dash-top {
@@ -1777,6 +1778,7 @@ h2,.section-title{
     padding-bottom: 40px;
   }
   .hero-visual {
+    height: 265px;
     min-height: 265px;
   }
   .orbit-a {
@@ -1789,7 +1791,7 @@ h2,.section-title{
   }
   .dashboard-card {
     width: min(320px, 90%);
-    transform: rotate(-1deg) scale(.94);
+    transform: rotate(-1deg) scale(.84);
   }
   .dash-footer span:last-child {
     max-width: 42%;
