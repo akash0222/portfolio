@@ -201,7 +201,7 @@ function App() {
             <div className="hero-actions">
               <a className="button button-primary" href="/work.html">Explore selected work <span>↘</span></a>
               <a className="button button-quiet" href="/contact.html">Discuss a role or project <span>↗</span></a>
-              <a className="button button-quiet" href="/resume.pdf" download="Akash-Singh-Resume.pdf">Download résumé <span>↓</span></a>
+              <a className="button button-quiet button-resume" href="/resume.pdf" download="Akash-Singh-Resume.pdf" aria-label="Download Akash Singh resume as a PDF">Download Resume <span aria-hidden="true">↓</span></a>
             </div>
           </div>
           <div className="hero-visual" role="img" aria-label="Abstract product dashboard illustration">

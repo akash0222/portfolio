@@ -1662,3 +1662,10 @@ h2,.section-title{
     flex-basis: 245px;
   }
 }
+
+
+/* ATS resume download CTA */
+.button-resume{border-color:rgba(155,240,202,.55);background:linear-gradient(135deg,rgba(155,240,202,.1),rgba(182,163,255,.12));color:var(--text);box-shadow:0 8px 24px rgba(50,190,147,.08)}
+.button-resume span{color:var(--green);font-size:15px}
+.button-resume:hover{border-color:var(--green);background:linear-gradient(135deg,rgba(155,240,202,.18),rgba(182,163,255,.16))}
+.button-resume:focus-visible{outline:2px solid var(--green);outline-offset:3px}
