@@ -56,17 +56,17 @@ for (const page of ["index.html", "work.html", "about.html", "skills.html", "ser
     const html = await readFile(path.join(root, page), "utf8");
     const checks = [
       ["title", /<title>/g, 1],
-      ["meta description", /<meta\\s+name="description"/g, 1],
-      ["canonical URL", /<link\\s+rel="canonical"/g, 1],
-      ["Open Graph type", /<meta\\s+property="og:type"/g, 1],
-      ["Open Graph title", /<meta\\s+property="og:title"/g, 1],
-      ["Open Graph description", /<meta\\s+property="og:description"/g, 1],
-      ["Open Graph URL", /<meta\\s+property="og:url"/g, 1],
-      ["Open Graph image", /<meta\\s+property="og:image"/g, 1],
-      ["Twitter card", /<meta\\s+name="twitter:card"/g, 1],
-      ["Twitter title", /<meta\\s+name="twitter:title"/g, 1],
-      ["Twitter description", /<meta\\s+name="twitter:description"/g, 1],
-      ["Twitter image", /<meta\\s+name="twitter:image"/g, 1],
+      ["meta description", /<meta\s+name="description"/g, 1],
+      ["canonical URL", /<link\s+rel="canonical"/g, 1],
+      ["Open Graph type", /<meta\s+property="og:type"/g, 1],
+      ["Open Graph title", /<meta\s+property="og:title"/g, 1],
+      ["Open Graph description", /<meta\s+property="og:description"/g, 1],
+      ["Open Graph URL", /<meta\s+property="og:url"/g, 1],
+      ["Open Graph image", /<meta\s+property="og:image"/g, 1],
+      ["Twitter card", /<meta\s+name="twitter:card"/g, 1],
+      ["Twitter title", /<meta\s+name="twitter:title"/g, 1],
+      ["Twitter description", /<meta\s+name="twitter:description"/g, 1],
+      ["Twitter image", /<meta\s+name="twitter:image"/g, 1],
     ];
 
     for (const [label, pattern, expectedCount] of checks) {
