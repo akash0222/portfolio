@@ -1677,3 +1677,23 @@ h2,.section-title{
 .nav-resume:hover{border-color:var(--green);background:rgba(155,240,202,.14);transform:translateY(-1px)}
 .nav-resume:focus-visible{outline:2px solid var(--green);outline-offset:3px}
 @media(max-width:680px){.nav-resume{justify-content:center;min-height:42px}}
+
+
+/* Sticky footer and decorative overflow fix for short pages.
+   Absolute ambient glows must not extend the document past the real content. */
+#root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: clip;
+  isolation: isolate;
+}
+#root > main {
+  flex: 1 0 auto;
+  width: 100%;
+}
+#root > .footer {
+  margin-top: auto;
+}

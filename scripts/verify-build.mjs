@@ -102,6 +102,30 @@ try {
   console.error(`Could not verify compiled résumé download control: ${error instanceof Error ? error.message : String(error)}`);
 }
 
+
+try {
+  const { readdir } = await import("node:fs/promises");
+  const assetDir = path.join(root, "assets");
+  const assetNames = await readdir(assetDir);
+  const cssAssets = assetNames.filter((name) => name.endsWith(".css"));
+  const cssBundles = await Promise.all(cssAssets.map((name) => readFile(path.join(assetDir, name), "utf8")));
+  const cssText = cssBundles.join("");
+  for (const [label, needle] of [
+    ["root flex layout", "#root{position:relative;display:flex;flex-direction:column"],
+    ["viewport-height floor", "min-height:100svh"],
+    ["footer pinning", "#root>.footer{margin-top:auto}"],
+    ["overflow clipping for decorative elements", "overflow:clip"],
+  ]) {
+    if (!cssText.includes(needle)) {
+      failed = true;
+      console.error("Built CSS is missing " + label + " fix");
+    }
+  }
+} catch (error) {
+  failed = true;
+  console.error("Could not verify footer layout CSS: " + (error instanceof Error ? error.message : String(error)));
+}
+
 for (const page of ["index.html", "work.html", "about.html", "skills.html", "services.html", "contact.html"]) {
   try {
     const html = await readFile(path.join(root, page), "utf8");
