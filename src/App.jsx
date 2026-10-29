@@ -346,10 +346,12 @@ function App() {
             <article className="project-card" data-category="website">
               <div className="project-art project-image-art detailing-photo-art">
                 <img
-                  src="https://unsplash.com/photos/M5lsL2E4ot0/download?force=true"
+                  src="https://images.unsplash.com/photo-1614888441158-de25f0ea4bc5?auto=format&amp;fit=crop&amp;fm=jpg&amp;w=1400&amp;h=1000&amp;q=82"
                   alt="A professional detailer machine-polishing a car’s glossy paint"
                   loading="lazy"
                   decoding="async"
+                  width="1400"
+                  height="1000"
                 />
               </div>
               <div className="project-content">
@@ -364,10 +366,12 @@ function App() {
             <article className="project-card" data-category="website commerce">
               <div className="project-art project-image-art eyewear-photo-art">
                 <img
-                  src="https://unsplash.com/photos/e8TtkC5xyv4/download?force=true"
+                  src="https://images.unsplash.com/photo-1483412468200-72182dbbc544?auto=format&amp;fit=crop&amp;fm=jpg&amp;w=1400&amp;h=1000&amp;q=82"
                   alt="Minimal black-framed eyeglasses on a clean pale background"
                   loading="lazy"
                   decoding="async"
+                  width="1400"
+                  height="1000"
                 />
               </div>
               <div className="project-content">
@@ -386,6 +390,8 @@ function App() {
                   alt="A warm, contemporary living room with neutral seating and large windows"
                   loading="lazy"
                   decoding="async"
+                  width="1400"
+                  height="1000"
                 />
               </div>
               <div className="project-content">
