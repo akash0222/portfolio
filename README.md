@@ -18,7 +18,7 @@ A responsive, six-page React portfolio for Akash Singh, built with Vite to prese
 ## Development
 1. Install dependencies with `npm install`.
 2. Start development with `npm run dev`.
-3. Run a production build, validate page output, and run nine contact API tests with `npm run check`.
+3. Run a production build, validate page output, and run eleven contact API tests with `npm run check`.
 4. Run only the API tests with `npm run test:api`.
 5. Preview the production build with `npm run preview`.
 
@@ -28,7 +28,7 @@ The site has six standalone pages: `/` (Home), `/work.html` (Work), `/about.html
 Use `npm run build` as the build command and `dist` as the output directory. GitHub Actions runs `npm run check` for pushes and pull requests to `main`.
 
 ## Contact form delivery
-The enquiry form submits to `/api/contact` and sends the enquiry to `CONTACT_TO_EMAIL` using Resend.
+The enquiry form submits to `/api/contact` and sends the enquiry to `CONTACT_TO_EMAIL` using Resend. For step-by-step account setup, required Vercel variables, and production verification, see [`docs/email-integration.md`](docs/email-integration.md).
 
 Configure these Vercel environment variables for Production (and Preview if testing previews):
 - `RESEND_API_KEY`: a private Resend API key with permission to send email.
