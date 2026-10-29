@@ -116,9 +116,12 @@ try {
     ["viewport-height floor", "min-height:100svh"],
     ["footer pinning", "#root>.footer{margin-top:auto}"],
     ["overflow clipping for decorative elements", "overflow:clip"],
-    ["mobile hero fixed height", "height:285px"],
+    ["mobile hero fixed height", "height:240px"],
     ["compact mobile chart", "height:82px"],
-    ["small-screen hero fixed height", "height:265px"],
+    ["small-screen hero fixed height", "height:210px"],
+    ["mobile dashboard scaling", "scale(.75)"],
+    ["narrow dashboard scaling", "scale(.68)"],
+    ["hide cropped mobile decorations", ".chip-two,.label-bottom{display:none}"],
   ]) {
     if (!cssText.includes(needle)) {
       failed = true;
