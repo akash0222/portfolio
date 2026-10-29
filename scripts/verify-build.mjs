@@ -11,6 +11,7 @@ const requiredFiles = [
   "contact.html",
   "assets/scheduly-preview.svg",
   "assets/result-generator-preview.svg",
+  "favicon.svg",
   "resume.pdf",
   "robots.txt",
   "sitemap.xml",
@@ -172,6 +173,31 @@ for (const page of ["index.html", "work.html", "about.html", "skills.html", "ser
     failed = true;
     console.error(`Could not verify ${page}: ${error instanceof Error ? error.message : String(error)}`);
   }
+}
+
+try {
+  const appSource = await readFile(path.resolve("src/App.jsx"), "utf8");
+  const localRefs = [...appSource.matchAll(/\\b(?:href|src)="(\\/[^"]+)"/g)].map((match) => match[1]);
+  for (const rawRef of localRefs) {
+    const pathname = new URL(rawRef, "https://portfolio.local").pathname;
+    const relative = pathname === "/" ? "index.html" : pathname.replace(/^\\/+/, "");
+    try {
+      await access(path.join(root, relative));
+    } catch {
+      failed = true;
+      console.error("Broken local link or asset reference in App.jsx: " + rawRef);
+    }
+  }
+  const imageTags = [...appSource.matchAll(/<img\\b[\\s\\S]*?\\/>/g)].map((match) => match[0]);
+  for (const [index, imageTag] of imageTags.entries()) {
+    if (!/\\balt=/.test(imageTag)) {
+      failed = true;
+      console.error("Image element " + (index + 1) + " in App.jsx is missing an alt attribute");
+    }
+  }
+} catch (error) {
+  failed = true;
+  console.error("Could not verify local links and image text alternatives: " + (error instanceof Error ? error.message : String(error)));
 }
 
 try {
