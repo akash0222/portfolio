@@ -5,6 +5,7 @@ function App() {
   const [activeWorkFilter, setActiveWorkFilter] = useState("all");
   const [enquiryState, setEnquiryState] = useState("idle");
   const [enquiryStatus, setEnquiryStatus] = useState("");
+  const [enquiryFallbackUrl, setEnquiryFallbackUrl] = useState("");
   const [theme, setTheme] = useState(() => {
     try {
       return window.localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
@@ -87,6 +88,7 @@ function App() {
       website: String(formData.get("website") || "").trim(),
     };
 
+    setEnquiryFallbackUrl("");
     setEnquiryState("sending");
     setEnquiryStatus("Sending your enquiry…");
 
@@ -113,9 +115,29 @@ function App() {
       }
 
       formElement.reset();
+      setEnquiryFallbackUrl("");
       setEnquiryState("success");
       setEnquiryStatus("Thanks — your enquiry has been sent successfully. Akash will reply by email.");
     } catch (error) {
+      const mailSubject = "Portfolio enquiry: " + (payload.service || "Website enquiry");
+      const mailBody = [
+        "Hello Akash,",
+        "",
+        "Name: " + payload.name,
+        "Email: " + payload.email,
+        "Service: " + (payload.service || "Not specified"),
+        "Budget: " + (payload.budget || "Not specified"),
+        "",
+        "Project brief:",
+        payload.message,
+        "",
+      ].join("\\n");
+      setEnquiryFallbackUrl(
+        "mailto:abhsingh76@gmail.com?subject=" +
+        encodeURIComponent(mailSubject) +
+        "&body=" +
+        encodeURIComponent(mailBody),
+      );
       setEnquiryState("error");
       if (error instanceof Error && error.name === "AbortError") {
         setEnquiryStatus("This is taking too long. Please try again or email Akash directly.");
@@ -473,6 +495,7 @@ function App() {
                 if (enquiryState === "success" || enquiryState === "error") {
                   setEnquiryState("idle");
                   setEnquiryStatus("");
+                  setEnquiryFallbackUrl("");
                 }
               }}
               aria-describedby="enquiry-status"
@@ -490,7 +513,7 @@ function App() {
               <div className="enquiry-submit-row">
                 <button className="button button-primary" type="submit" disabled={enquiryState === "sending"}>{enquiryState === "sending" ? "Sending…" : "Send enquiry"} <span aria-hidden="true">{enquiryState === "sending" ? "…" : "↗"}</span></button>
                 <p id="enquiry-status" className={`enquiry-status enquiry-status-${enquiryState}`} role="status" aria-live="polite">{enquiryStatus || "Submit your details and you’ll see a confirmation here."}</p>
-                {enquiryState === "error" && <p className="enquiry-fallback">You can also email <a href="mailto:abhsingh76@gmail.com">abhsingh76@gmail.com</a>.</p>}
+                {enquiryState === "error" && <p className="enquiry-fallback">You can <a href={enquiryFallbackUrl || "mailto:abhsingh76@gmail.com"}>open a pre-filled email with your enquiry</a> or email <a href="mailto:abhsingh76@gmail.com">abhsingh76@gmail.com</a> directly.</p>}
               </div>
             </form>
           </div>}

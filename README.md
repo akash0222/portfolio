@@ -35,7 +35,7 @@ Configure these Vercel environment variables for Production (and Preview if test
 - `RESEND_FROM_EMAIL`: a sender address on a domain verified in Resend, e.g. `AKASH / WORKS <enquiries@your-verified-domain.com>`.
 - `CONTACT_TO_EMAIL`: destination inbox; currently defaults to `abhsingh76@gmail.com`.
 
-Never put the Resend API key in client-side code or commit it to GitHub. If configuration is missing or delivery fails, the form displays an error and offers a direct email fallback. The endpoint's in-memory rate limit is best-effort per warm serverless instance; sustained public traffic should use a shared rate-limit store or edge/WAF rule.
+Never put the Resend API key in client-side code or commit it to GitHub. If configuration is missing or delivery fails, the form displays an error and offers a pre-filled email draft fallback. The production contact form requires `RESEND_API_KEY` and `RESEND_FROM_EMAIL` to be configured in Vercel to send enquiries automatically. The endpoint's in-memory rate limit is best-effort per warm serverless instance; sustained public traffic should use a shared rate-limit store or edge/WAF rule.
 
 ## Before publishing
 - Confirm that the public contact email is correct.

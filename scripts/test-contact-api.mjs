@@ -146,6 +146,25 @@ try {
     assert.equal(fetchCalls[0].options.signal.aborted, false);
   });
 
+  await test("returns a setup error if the email provider is not configured", async () => {
+    const savedKey = process.env.RESEND_API_KEY;
+    const savedFrom = process.env.RESEND_FROM_EMAIL;
+    try {
+      delete process.env.RESEND_API_KEY;
+      delete process.env.RESEND_FROM_EMAIL;
+      const res = makeResponse();
+      await handler(makeRequest({ body: validBody, ip: "203.0.113.29" }), res);
+      assert.equal(res.statusCode, 503);
+      assert.equal(res.body.ok, false);
+      assert.match(res.body.error, /not configured/i);
+    } finally {
+      if (savedKey === undefined) delete process.env.RESEND_API_KEY;
+      else process.env.RESEND_API_KEY = savedKey;
+      if (savedFrom === undefined) delete process.env.RESEND_FROM_EMAIL;
+      else process.env.RESEND_FROM_EMAIL = savedFrom;
+    }
+  });
+
   await test("returns a delivery error when email provider rejects a message", async () => {
     fetchMode = "upstream-error";
     const res = makeResponse();

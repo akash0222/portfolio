@@ -90,6 +90,18 @@ try {
 for (const page of ["index.html", "work.html", "about.html", "skills.html", "services.html", "contact.html"]) {
   try {
     const html = await readFile(path.join(root, page), "utf8");
+    if (!/^<!doctype html>/i.test(html)) {
+      failed = true;
+      console.error(`HTML document missing a standards-mode doctype: ${page}`);
+    }
+    if (!/<html lang="en-IN">/i.test(html)) {
+      failed = true;
+      console.error(`HTML document missing the expected language declaration: ${page}`);
+    }
+    if (!/<\\/html>\\s*$/i.test(html)) {
+      failed = true;
+      console.error(`HTML document is not closed correctly: ${page}`);
+    }
     const checks = [
       ["title", /<title>/g, 1],
       ["meta description", /<meta\s+name="description"/g, 1],
