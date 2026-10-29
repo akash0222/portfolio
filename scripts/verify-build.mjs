@@ -116,6 +116,9 @@ try {
     ["viewport-height floor", "min-height:100svh"],
     ["footer pinning", "#root>.footer{margin-top:auto}"],
     ["overflow clipping for decorative elements", "overflow:clip"],
+    ["mobile hero height", "min-height:285px"],
+    ["compact mobile chart", "height:82px"],
+    ["small-screen dashboard", "min-height:265px"],
   ]) {
     if (!cssText.includes(needle)) {
       failed = true;

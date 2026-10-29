@@ -1697,3 +1697,102 @@ h2,.section-title{
 #root > .footer {
   margin-top: auto;
 }
+
+
+/* Mobile hero refinement: keep the concept dashboard readable without making it
+   dominate the first screen. Scale back the orbital decoration and card height. */
+@media (max-width: 680px) {
+  .hero {
+    padding-bottom: 48px;
+    gap: 16px;
+  }
+  .hero-visual {
+    min-height: 285px;
+    margin: 0;
+  }
+  .hero-visual::before {
+    width: 220px;
+    height: 220px;
+    opacity: .65;
+  }
+  .orbit-a {
+    width: min(310px, 92%);
+    height: 225px;
+    opacity: .7;
+  }
+  .orbit-b {
+    width: min(250px, 75%);
+    height: 280px;
+    opacity: .55;
+  }
+  .dashboard-card {
+    width: min(340px, 90%);
+    transform: rotate(-1deg) scale(.96);
+    transform-origin: center;
+  }
+  .dash-top {
+    gap: 7px;
+    padding: 12px 14px;
+    font-size: 7px;
+  }
+  .dash-body {
+    padding: 15px;
+  }
+  .dash-title {
+    gap: 8px;
+    font-size: 12px;
+  }
+  .live-pill {
+    flex: 0 0 auto;
+    font-size: 7px;
+  }
+  .dash-stats {
+    gap: 8px;
+    margin: 13px 0 12px;
+  }
+  .dash-stats div {
+    padding: 10px;
+  }
+  .dash-stats strong {
+    font-size: 21px;
+  }
+  .chart-area {
+    height: 82px;
+  }
+  .dash-footer {
+    gap: 8px;
+    padding-top: 9px;
+    font-size: 7px;
+  }
+  .chip-one {
+    top: 10px;
+    right: 0;
+    transform: scale(.9);
+    transform-origin: top right;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding-bottom: 40px;
+  }
+  .hero-visual {
+    min-height: 265px;
+  }
+  .orbit-a {
+    width: min(290px, 92%);
+    height: 205px;
+  }
+  .orbit-b {
+    width: min(225px, 72%);
+    height: 250px;
+  }
+  .dashboard-card {
+    width: min(320px, 90%);
+    transform: rotate(-1deg) scale(.94);
+  }
+  .dash-footer span:last-child {
+    max-width: 42%;
+    text-align: right;
+  }
+}
