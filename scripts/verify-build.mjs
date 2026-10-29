@@ -51,6 +51,42 @@ try {
   console.error(`Could not read sitemap: ${error instanceof Error ? error.message : String(error)}`);
 }
 
+
+// Validate the résumé file itself, not just its existence.
+try {
+  const resume = await readFile(path.join(root, "resume.pdf"));
+  if (resume.subarray(0, 5).toString("ascii") !== "%PDF-" || resume.length < 5000) {
+    throw new Error("résumé asset does not have a valid PDF signature or is unexpectedly small");
+  }
+  console.log(`OK resume.pdf signature and size (${resume.length} bytes)`);
+} catch (error) {
+  failed = true;
+  console.error(`INVALID resume.pdf: ${error instanceof Error ? error.message : String(error)}`);
+}
+
+// Ensure the compiled portfolio bundle contains the resume download control.
+try {
+  const { readdir } = await import("node:fs/promises");
+  const assetDir = path.join(root, "assets");
+  const assetNames = await readdir(assetDir);
+  const jsAssets = assetNames.filter((name) => name.endsWith(".js"));
+  const bundles = await Promise.all(jsAssets.map((name) => readFile(path.join(assetDir, name), "utf8")));
+  const bundleText = bundles.join("\\n");
+  for (const [label, needle] of [
+    ["resume CTA label", "Download Resume"],
+    ["resume asset path", "/resume.pdf"],
+    ["resume download filename", "Akash-Singh-Resume.pdf"],
+  ]) {
+    if (!bundleText.includes(needle)) {
+      failed = true;
+      console.error(`Built client bundle is missing ${label}`);
+    }
+  }
+} catch (error) {
+  failed = true;
+  console.error(`Could not verify compiled résumé download control: ${error instanceof Error ? error.message : String(error)}`);
+}
+
 for (const page of ["index.html", "work.html", "about.html", "skills.html", "services.html", "contact.html"]) {
   try {
     const html = await readFile(path.join(root, page), "utf8");

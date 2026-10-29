@@ -1669,3 +1669,11 @@ h2,.section-title{
 .button-resume span{color:var(--green);font-size:15px}
 .button-resume:hover{border-color:var(--green);background:linear-gradient(135deg,rgba(155,240,202,.18),rgba(182,163,255,.16))}
 .button-resume:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+
+
+/* Make the resume file download reliably on all portfolio pages */
+.nav-resume{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;padding:9px 12px;border:1px solid rgba(155,240,202,.5);border-radius:9px;color:var(--text);background:rgba(155,240,202,.06);font-size:11px;font-weight:800;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.nav-resume span{color:var(--green);font-size:14px}
+.nav-resume:hover{border-color:var(--green);background:rgba(155,240,202,.14);transform:translateY(-1px)}
+.nav-resume:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+@media(max-width:680px){.nav-resume{justify-content:center;min-height:42px}}

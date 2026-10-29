@@ -173,6 +173,7 @@ function App() {
             <a href="/about.html" aria-current={currentPage === "about" ? "page" : undefined} onClick={closeMenu}>About</a>
             <a href="/skills.html" aria-current={currentPage === "skills" ? "page" : undefined} onClick={closeMenu}>Skills</a>
             <a href="/services.html" aria-current={currentPage === "services" ? "page" : undefined} onClick={closeMenu}>Services</a>
+            <a href="/resume.pdf" className="nav-resume" download="Akash-Singh-Resume.pdf" aria-label="Download Akash Singh resume as a PDF" onClick={closeMenu}>Resume <span aria-hidden="true">↓</span></a>
             <a href="/contact.html#project-enquiry" className="nav-cta" aria-current={currentPage === "contact" ? "page" : undefined} onClick={closeMenu}>Let's talk <span>↗</span></a>
             <button
               className="theme-toggle"
