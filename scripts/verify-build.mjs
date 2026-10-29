@@ -129,7 +129,7 @@ try {
 for (const page of ["index.html", "work.html", "about.html", "skills.html", "services.html", "contact.html"]) {
   try {
     const html = await readFile(path.join(root, page), "utf8");
-    if (!/<\/html>\s*$/i.test(html)) {
+    if (!/^<!doctype html>/i.test(html)) {
       failed = true;
       console.error(`HTML document missing a standards-mode doctype: ${page}`);
     }
@@ -172,6 +172,39 @@ for (const page of ["index.html", "work.html", "about.html", "skills.html", "ser
     failed = true;
     console.error(`Could not verify ${page}: ${error instanceof Error ? error.message : String(error)}`);
   }
+}
+
+try {
+  const appSource = await readFile(path.resolve("src/App.jsx"), "utf8");
+  const styleSource = await readFile(path.resolve("styles.css"), "utf8");
+  const filters = new Map(
+    [...appSource.matchAll(/\{\s*id:\s*"(all|web-apps|websites|commerce)",\s*label:\s*"[^"]+",\s*count:\s*(\d+)\s*\}/g)]
+      .map((match) => [match[1], Number(match[2])]),
+  );
+  const categories = [...appSource.matchAll(/<article\b[^>]*data-category="([^"]+)"/g)]
+    .map((match) => match[1].split(/\s+/));
+  const expectedCounts = {
+    all: categories.length,
+    "web-apps": categories.filter((items) => items.includes("web-app")).length,
+    websites: categories.filter((items) => items.includes("website")).length,
+    commerce: categories.filter((items) => items.includes("commerce")).length,
+  };
+  for (const [filterId, expected] of Object.entries(expectedCounts)) {
+    if (filters.get(filterId) !== expected) {
+      failed = true;
+      console.error("Work filter count mismatch for " + filterId + ": expected " + expected + ", configured " + filters.get(filterId));
+    }
+  }
+  for (const [filterId, category] of [["web-apps", "web-app"], ["websites", "website"], ["commerce", "commerce"]]) {
+    const selector = `.project-grid[data-filter="${filterId}"] .project-card:not([data-category~="${category}"])`;
+    if (!styleSource.includes(selector)) {
+      failed = true;
+      console.error("Missing work-filter CSS rule for " + filterId);
+    }
+  }
+} catch (error) {
+  failed = true;
+  console.error("Could not verify Work page filters: " + (error instanceof Error ? error.message : String(error)));
 }
 
 if (failed) {
