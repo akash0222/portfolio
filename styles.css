@@ -1633,3 +1633,32 @@ h2,.section-title{
     flex-basis: 245px;
   }
 }
+
+
+/* Keep wide-tagged portfolio cards in the same image rhythm as the card grid.
+   The generic wide layout sets image height to 100%; in the 3-column Work grid
+   that makes the image use the card's full intrinsic height. */
+.work-section .project-wide .project-image-art {
+  height: 270px;
+  min-height: 270px;
+  max-height: 270px;
+  flex: 0 0 270px;
+  align-self: stretch;
+}
+.work-section .project-wide .project-image-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+}
+@media (max-width: 680px) {
+  .work-section .project-wide .project-image-art {
+    height: 245px;
+    min-height: 245px;
+    max-height: 245px;
+    flex-basis: 245px;
+  }
+}
