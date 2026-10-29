@@ -58,6 +58,20 @@ try {
   if (resume.subarray(0, 5).toString("ascii") !== "%PDF-" || resume.length < 5000) {
     throw new Error("résumé asset does not have a valid PDF signature or is unexpectedly small");
   }
+  const pdfText = resume.toString("latin1");
+  const xrefIndex = pdfText.lastIndexOf("xref\\n");
+  const declaredXref = Number(pdfText.match(/startxref\\s+(\\d+)/)?.[1]);
+  if (!Number.isFinite(declaredXref) || declaredXref !== xrefIndex) {
+    throw new Error("PDF cross-reference offset does not match the xref table");
+  }
+  const streamStart = pdfText.indexOf("stream\\n") + "stream\\n".length;
+  const streamEnd = pdfText.indexOf("\\nendstream", streamStart);
+  const declaredStreamLength = Number(pdfText.match(/\\/Length\\s+(\\d+)/)?.[1]);
+  if (streamStart < "stream\\n".length || streamEnd < streamStart
+      || !Number.isFinite(declaredStreamLength)
+      || declaredStreamLength !== streamEnd - streamStart) {
+    throw new Error("PDF content stream length does not match its declared length");
+  }
   console.log(`OK resume.pdf signature and size (${resume.length} bytes)`);
 } catch (error) {
   failed = true;
