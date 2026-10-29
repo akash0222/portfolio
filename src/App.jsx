@@ -131,7 +131,7 @@ function App() {
         "Project brief:",
         payload.message,
         "",
-      ].join("\\n");
+      ].join("\n");
       setEnquiryFallbackUrl(
         "mailto:abhsingh76@gmail.com?subject=" +
         encodeURIComponent(mailSubject) +

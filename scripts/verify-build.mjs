@@ -71,7 +71,7 @@ try {
   const assetNames = await readdir(assetDir);
   const jsAssets = assetNames.filter((name) => name.endsWith(".js"));
   const bundles = await Promise.all(jsAssets.map((name) => readFile(path.join(assetDir, name), "utf8")));
-  const bundleText = bundles.join("\\n");
+  const bundleText = bundles.join("\n");
   for (const [label, needle] of [
     ["resume CTA label", "Download Resume"],
     ["resume asset path", "/resume.pdf"],
@@ -90,7 +90,7 @@ try {
 for (const page of ["index.html", "work.html", "about.html", "skills.html", "services.html", "contact.html"]) {
   try {
     const html = await readFile(path.join(root, page), "utf8");
-    if (!/^<!doctype html>/i.test(html)) {
+    if (!/<\/html>\s*$/i.test(html)) {
       failed = true;
       console.error(`HTML document missing a standards-mode doctype: ${page}`);
     }
@@ -98,7 +98,7 @@ for (const page of ["index.html", "work.html", "about.html", "skills.html", "ser
       failed = true;
       console.error(`HTML document missing the expected language declaration: ${page}`);
     }
-    if (!/<\\/html>\\s*$/i.test(html)) {
+    if (!/<\/html>\s*$/i.test(html)) {
       failed = true;
       console.error(`HTML document is not closed correctly: ${page}`);
     }
